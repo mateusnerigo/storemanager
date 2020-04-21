@@ -8,6 +8,7 @@
     <title>Store Manager - v0.01</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body class="login">
     <div class="container">  

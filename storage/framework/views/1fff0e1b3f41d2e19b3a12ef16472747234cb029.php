@@ -8,7 +8,6 @@
     <title>Store Manager - v0.01</title>
 
     <link rel="stylesheet" href="<?php echo e(asset('css/app.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('css/login.css')); ?>">
 </head>
 <body class="login">
     <div class="container">  
@@ -52,4 +51,4 @@
         </form>
     </div>
 </body>
-</html><?php /**PATH C:\xampp\htdocs\storeManager\resources\views/login.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\xampp\htdocs\storeManager\resources\views//login.blade.php ENDPATH**/ ?>

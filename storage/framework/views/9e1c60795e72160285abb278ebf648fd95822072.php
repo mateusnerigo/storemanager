@@ -1,5 +1,10 @@
 <nav class="nav-app">
   <div class="nav-container">
+    <div class="nav-header">
+      <?php echo e(session('current_user')->name); ?>
+
+      <div class="nav-horizontal-divider"></div>
+    </div>
     <div class="nav-item">
       <a href="/users" class="nav-link">
         Usuários
@@ -55,6 +60,7 @@
       </a>
     </div>
     <div class="nav-item last-nav-item">
+      <div class="nav-horizontal-divider"></div>
       <a href="/login" class="nav-link">
         Sair
         <img src=<?php echo e(asset('img/out.png')); ?> class="nav-icon">

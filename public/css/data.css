@@ -1,0 +1,40 @@
+.show-page {
+  max-height: 550px;
+}
+
+.show-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--text-medium);
+  filter: brightness(110%);
+}
+
+.show-group {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.show-field {
+  padding: 20px 10px;
+}
+
+
+.show-label {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.show-data {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+
+

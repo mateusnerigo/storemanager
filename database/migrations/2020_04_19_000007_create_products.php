@@ -13,7 +13,7 @@ class CreateProducts extends Migration
             $table->string('name');
             $table->timestamp('buy_date');
             $table->integer('stock');
-            $table->integer('extra_code')->nullable();
+            $table->string('extra_code')->nullable();
             $table->string('manufacturer')->nullable();
             $table->double('buy_price');
             $table->double('sell_price')->nullable();

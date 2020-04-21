@@ -8,6 +8,11 @@
   <title><?php echo $__env->yieldContent('title'); ?></title>
 
   <link rel="stylesheet" href="<?php echo e(asset('css/app.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(asset('css/buttons.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(asset('css/forms.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(asset('css/nav.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(asset('css/tables.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(asset('css/data.css')); ?>">
 </head>
 <body class="app">
    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
@@ -21,8 +26,10 @@
 <?php endif; ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?> 
-  <?php if (! empty(trim($__env->yieldContent('content')))): ?>
-      <?php echo $__env->yieldContent('content'); ?>
-  <?php endif; ?>
+  <div class="content">
+    <?php if (! empty(trim($__env->yieldContent('content')))): ?>
+        <?php echo $__env->yieldContent('content'); ?>
+    <?php endif; ?>
+  </div>
 </body>
 </html><?php /**PATH C:\xampp\htdocs\storeManager\resources\views/layouts/app.blade.php ENDPATH**/ ?>
