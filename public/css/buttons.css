@@ -15,6 +15,7 @@
   color: var(--text-light);
   border-radius: 50px;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .button-field {
@@ -54,4 +55,3 @@
   background-color: var(--text-medium);
   filter: brightness(110%);
 }
-

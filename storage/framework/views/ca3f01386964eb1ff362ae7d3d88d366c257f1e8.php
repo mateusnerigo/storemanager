@@ -109,11 +109,11 @@
     </div>
     
     <div class="show-button-group">
-      <div class="show-button-field">
+      <div class="button-field">
         <a class="btn btn-neutral" href="/users">Voltar</a>
       </div>
 
-      <div class="show-button-field">
+      <div class="button-field">
         <a class="btn btn-primary" href="/users/<?php echo e($selected_user->id); ?>/edit">Editar</a>
         <a class="btn btn-danger" href="#">Excluir</a>
       </div>

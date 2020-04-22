@@ -6,10 +6,9 @@
   display: flex;
   flex-direction: column;
   width: 90%;
+  margin-top: 45px;
   margin-left: auto;
   margin-right: auto;
-  background-color: var(--text-medium);
-  filter: brightness(110%);
 }
 
 .show-group {
@@ -20,7 +19,7 @@
 }
 
 .show-field {
-  padding: 20px 10px;
+  padding: 25px 10px;
 }
 
 
@@ -28,12 +27,20 @@
   text-align: center;
   font-size: 0.9rem;
   font-weight: 300;
+  padding: 5px;
 }
 
 .show-data {
   text-align: center;
   font-size: 1.2rem;
   font-weight: 400;
+
+  padding: 5px 0px;
+  border: none;
+  border-top: 1px solid var(--primary-light);
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
 }
 
 
