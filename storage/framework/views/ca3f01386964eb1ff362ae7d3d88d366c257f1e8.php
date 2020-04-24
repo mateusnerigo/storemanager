@@ -8,7 +8,7 @@
     </div>
 
     <div class="page-text">
-      <div class="page-title"><?php echo e($user->name ?? '--'); ?><span><?php echo e($user->is_active ? 'Ativo' : 'Inativo'); ?></span></div>
+      <div class="page-title"><?php echo e($user->name ?? '--'); ?><span><?php echo e($user->deleted_at ? 'Inativo' : 'Ativo'); ?></span></div>
       <div class="page-description">Tipo de acesso: <strong><?php echo e($user->is_admin ? 'Administrador' : 'Geral'); ?></strong></div>
     </div>
   </div>
@@ -110,11 +110,11 @@
     
     <div class="show-button-group">
       <div class="button-field">
-        <a class="btn btn-neutral" href="/users">Voltar</a>
-      </div>
-
-      <div class="button-field">
         <a class="btn btn-primary" href="/users/edit/<?php echo e($user->id); ?>">Editar</a>
+      </div>
+      
+      <div class="button-field">
+        <a class="btn btn-neutral" href="/users">Voltar</a>
         <?php if(session('current_user')->id != $user->id): ?> 
           <a class="btn btn-danger" href="/users/delete/<?php echo e($user->id); ?>">Excluir</a>
         <?php endif; ?>

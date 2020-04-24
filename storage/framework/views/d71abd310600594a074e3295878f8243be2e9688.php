@@ -1,20 +1,19 @@
 
 <?php $__env->startSection('title', 'Cadastrar Usuário'); ?>
 <?php $__env->startSection('content'); ?>
-  <div class="form-container">
-    <div class="form-icon"></div>
-
-    <div class="page-title-container">
-      <div class="page-icon">
-        <img src="<?php echo e(asset('img/user.png')); ?>" alt="-">
-      </div>
-  
-      <div class="page-text">
-        <div class="page-title">Cadastrar Usuário</div>
-        <div class="page-description">Cadastre um novo usuário preenchendo os dados abaixo</div>
-      </div>
+  <div class="page-title-container">
+    <div class="page-icon">
+      <img src="<?php echo e(asset('img/user.png')); ?>" alt="-">
     </div>
-    <form action="/users" class="new-form" method="POST">
+
+    <div class="page-text">
+      <div class="page-title">Cadastrar Usuário</div>
+      <div class="page-description">Cadastre um novo usuário preenchendo os dados abaixo</div>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <form action="/users" class="input-form" method="POST">
       <?php echo csrf_field(); ?>
 
       <div class="input-row"> <!-- name, rg, cpf -->

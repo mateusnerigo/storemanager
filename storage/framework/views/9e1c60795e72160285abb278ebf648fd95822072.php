@@ -59,6 +59,9 @@
         <img src=<?php echo e(asset('img/settings.png')); ?> class="nav-icon">
       </a>
     </div>
+
+    <div class="nav-horizontal-block"></div>
+
     <div class="nav-item last-nav-item">
       <div class="nav-horizontal-divider"></div>
       <a href="/login" class="nav-link">

@@ -12,9 +12,16 @@
   justify-content: center;
   font-size: 2rem;
   color: var(--text-medium);
-  padding: 50px 10px;
+  padding: 50px 10px 40px 10px;
 
   margin-bottom: 10px;
+  background-color: var(--primary-light);
+
+  z-index: 100;
+  position: sticky;
+  top: 0px;
+
+  transition: 0.3s;
 }
 
 .nav-item {
@@ -34,7 +41,7 @@
 }
 
 .nav-link {
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -43,16 +50,53 @@
   font-size: 1.2rem;
   font-weight: 400;
   color: var(--text-light);
+  transition: 0.3s;
 }
 
 .last-nav-item {
   position: absolute;
-  bottom: 10px;
+  background-color: var(--primary-light);
+  bottom: 0px;
   width: 250px;
+  box-shadow: 0px 0px 25px -15px black ;
 }
 
 .nav-horizontal-divider {
   height: 1px;
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-horizontal-block {
+  height: 50px;
+}
+
+@media only screen and (max-height: 570px) {
+  .nav-header {
+    padding: 20px 10px;
+  }
+}
+
+@media only screen and (max-height: 520px) {
+  .nav-link {
+    font-size: 1rem;
+    padding: 9px 20px;
+  }
+}
+
+@media only screen and (max-height: 460px) {
+  .nav-link {
+    font-size: 1rem;
+    padding: 6px 20px;
+  }
+}
+
+@media only screen and (max-height: 400px) {
+  .nav-link {
+    font-size: 1rem;
+    padding: 2px 20px;
+  }
+  .nav-icon {
+    display: none;
+  }
 }

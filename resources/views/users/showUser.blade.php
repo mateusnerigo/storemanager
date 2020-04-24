@@ -8,7 +8,7 @@
     </div>
 
     <div class="page-text">
-      <div class="page-title">{{ $user->name ?? '--' }}<span>{{ $user->is_active ? 'Ativo' : 'Inativo' }}</span></div>
+      <div class="page-title">{{ $user->name ?? '--' }}<span>{{ $user->deleted_at ? 'Inativo' : 'Ativo' }}</span></div>
       <div class="page-description">Tipo de acesso: <strong>{{ $user->is_admin ? 'Administrador' : 'Geral' }}</strong></div>
     </div>
   </div>
@@ -110,11 +110,11 @@
     
     <div class="show-button-group">
       <div class="button-field">
-        <a class="btn btn-neutral" href="/users">Voltar</a>
-      </div>
-
-      <div class="button-field">
         <a class="btn btn-primary" href="/users/edit/{{ $user->id }}">Editar</a>
+      </div>
+      
+      <div class="button-field">
+        <a class="btn btn-neutral" href="/users">Voltar</a>
         @if (session('current_user')->id != $user->id) 
           <a class="btn btn-danger" href="/users/delete/{{ $user->id }}">Excluir</a>
         @endif
