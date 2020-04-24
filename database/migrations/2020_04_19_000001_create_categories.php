@@ -13,7 +13,7 @@ class CreateCategories extends Migration
             $table->string('name');
             $table->text('obs')->nullable();
             $table->boolean('is_active')->default(true);
-            $table->softDeletes('inactive');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

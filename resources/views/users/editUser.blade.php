@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', "Editar Usuário - $selected_user->name")
+@section('title', "Editar Usuário - $user->name")
 @section('content')
   <div class="form-container">
     <div class="form-icon"></div>
@@ -10,12 +10,12 @@
       </div>
   
       <div class="page-text">
-        <div class="page-title">{{ $selected_user->name }}<span>Editar Usuário</span></div>
+        <div class="page-title">{{ $user->name }}<span>Editar Usuário</span></div>
         <div class="page-description">Edite os dados do usuário alterando as informações abaixo</div>
       </div>
     </div>
 
-    <form action="{{ route('users.update', $selected_user->id) }}" class="new-form" method="POST">
+    <form action="/users/{{ $user->id }}" class="new-form" method="POST">
       @csrf
       @method('PUT')
 
@@ -26,7 +26,7 @@
             name="name" 
             id="name" 
             class="form-input sz7"
-            value="{{ $selected_user->name }}"
+            value="{{ $user->name }}"
             placeholder="Nome do novo usuário"> 
           <div class="invalid-msg">
           @if ($errors->has('name'))
@@ -41,7 +41,7 @@
             name="rg" 
             id="rg" 
             class="form-input sz4"
-            value="{{ $selected_user->rg }}"
+            value="{{ $user->rg }}"
             placeholder="Somente números">
           
           <div class="invalid-msg">
@@ -57,7 +57,7 @@
             name="cpf" 
             id="cpf" 
             class="form-input sz4"
-            value="{{ $selected_user->cpf }}"
+            value="{{ $user->cpf }}"
             placeholder="Somente números">
           
           <div class="invalid-msg">
@@ -76,6 +76,7 @@
             name="is_admin" 
             id="is_admin" 
             class="form-input sz3">
+            <option value="" disabled selected>Selecione</option>
             <option value="0">Geral</option>
             <option value="1">Administrador</option>
           </select>
@@ -93,7 +94,7 @@
             name="username" 
             id="username" 
             class="form-input sz4"
-            value="{{ $selected_user->username }}"
+            value="{{ $user->username }}"
             placeholder="Usuário de acesso ao sistema">
           
           <div class="invalid-msg">
@@ -141,7 +142,7 @@
             name="address" 
             id="address" 
             class="form-input sz7"
-            value="{{ $selected_user->address }}"
+            value="{{ $user->address }}"
             placeholder="Endereço">
         </div> <!-- end address input -->
   
@@ -151,7 +152,7 @@
             name="address_number" 
             id="address_number" 
             class="form-input sz4"
-            value="{{ $selected_user->address_number }}"
+            value="{{ $user->address_number }}"
             placeholder="Número">
         </div> <!-- end address_number input -->
   
@@ -161,7 +162,7 @@
             name="neighborhood" 
             id="neighborhood" 
             class="form-input sz4"
-            value="{{ $selected_user->neighborhood }}"
+            value="{{ $user->neighborhood }}"
             placeholder="Bairro">
         </div> <!-- end neighborhood input -->
       </div>
@@ -173,7 +174,7 @@
             name="city" 
             id="city" 
             class="form-input sz7"
-            value="{{ $selected_user->city }}"
+            value="{{ $user->city }}"
             placeholder="Cidade">
         </div> <!-- end city input -->
 
@@ -183,7 +184,7 @@
             name="cep" 
             id="cep" 
             class="form-input sz4"
-            value="{{ $selected_user->cep }}"
+            value="{{ $user->cep }}"
             placeholder="Somente números">
         </div> <!-- end cep input -->
   
@@ -207,7 +208,7 @@
             name="email" 
             id="email" 
             class="form-input sz7"
-            value="{{ $selected_user->email }}"
+            value="{{ $user->email }}"
             placeholder="Email">
           
           <div class="invalid-msg">
@@ -223,7 +224,7 @@
             name="phone1" 
             id="phone1" 
             class="form-input sz4"
-            value="{{ $selected_user->phone1 }}"
+            value="{{ $user->phone1 }}"
             placeholder="Fixo ou Celular">
         </div> <!-- end phone1 input -->
   
@@ -233,7 +234,7 @@
             name="phone2" 
             id="phone2" 
             class="form-input sz4"
-            value="{{ $selected_user->phone2 }}"
+            value="{{ $user->phone2 }}"
             placeholder="Fixo ou Celular">
         </div> <!-- end phone2 input -->
       </div>
@@ -246,7 +247,7 @@
             class="form-input form-text-area" 
             rows="1" 
             maxlength="150" 
-            value="{{ $selected_user->obs }}"
+            value="{{ $user->obs }}"
             placeholder="Adicione alguma observação sobre o usuário"></textarea>
   
           <div class="invalid-msg">
@@ -258,7 +259,7 @@
       </div>
 
       <div class="button-field">
-        <a class="btn btn-neutral" href="/users/{{ $selected_user->id }}" class="button-cancell">Cancelar</a>
+        <a class="btn btn-neutral" href="/users/update{{ $user->id }}" class="button-cancell">Cancelar</a>
         <button class="btn btn-primary" type="submit" class="button-confirm">Salvar</button>
       </div>
     </form>

@@ -1,7 +1,9 @@
+<?php if(session('current_user') != ''): ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
@@ -32,4 +34,10 @@
     <?php endif; ?>
   </div>
 </body>
-</html><?php /**PATH C:\xampp\htdocs\storeManager\resources\views/layouts/app.blade.php ENDPATH**/ ?>
+</html>
+
+<?php else: ?> 
+<script type="text/javascript">
+  window.location = "/";
+</script>
+<?php endif; ?><?php /**PATH C:\xampp\htdocs\storeManager\resources\views/layouts/app.blade.php ENDPATH**/ ?>

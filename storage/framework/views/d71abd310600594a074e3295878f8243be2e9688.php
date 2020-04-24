@@ -73,7 +73,8 @@
             name="is_admin" 
             id="is_admin" 
             class="form-input sz3">
-            <option value="0" selected>Geral</option>
+            <option value="" disabled selected>Selecione</option>
+            <option value="0">Geral</option>
             <option value="1">Administrador</option>
           </select>
   

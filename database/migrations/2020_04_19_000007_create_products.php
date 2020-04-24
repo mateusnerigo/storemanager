@@ -27,7 +27,7 @@ class CreateProducts extends Migration
             $table->foreign('supplier_id')->references('id')->on('suppliers');
 
             $table->boolean('is_active')->default(true);
-            $table->softDeletes('inactive');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

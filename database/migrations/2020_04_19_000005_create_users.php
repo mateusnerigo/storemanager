@@ -31,8 +31,7 @@ class CreateUsers extends Migration
             
             $table->string('photo_location')->nullable();
             $table->boolean('is_admin')->default(true);
-            $table->boolean('is_active')->default(true);
-            $table->softDeletes('inactive');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

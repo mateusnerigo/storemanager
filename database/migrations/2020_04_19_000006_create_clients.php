@@ -34,7 +34,7 @@ class CreateClients extends Migration
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->boolean('is_active')->default(true);
-            $table->softDeletes('inactive');
+            $table->softDeletes();
             
             $table->timestamps();
         });

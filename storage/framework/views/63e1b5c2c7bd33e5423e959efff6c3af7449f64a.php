@@ -30,7 +30,7 @@
           <td><?php echo e($user->name); ?></td>
           <td><?php echo e($user->username); ?></td>
           <td><?php echo e(($user->is_admin) ? 'Administrador' : 'Geral'); ?></td>
-          <td><?php echo e(($user->is_active) ? 'Ativo' : 'Inativo'); ?></td>
+          <td><?php echo e(($user->deleted_at) ? 'Inativo' : 'Ativo'); ?></td>
           <td>
             <a href="/users/<?php echo e($user->id); ?>">Visualizar</a>
           </td>
@@ -41,7 +41,7 @@
     </table>
   </div>
   
-  <a class="btn btn-primary" href="/users/create">
+  <a class="btn btn-primary" href="/users/new">
     Novo Usuário
   </a>
 

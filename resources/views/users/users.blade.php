@@ -30,7 +30,7 @@
           <td>{{ $user->name }}</td>
           <td>{{ $user->username }}</td>
           <td>{{ ($user->is_admin) ? 'Administrador' : 'Geral' }}</td>
-          <td>{{ ($user->is_active) ? 'Ativo' : 'Inativo' }}</td>
+          <td>{{ ($user->deleted_at) ? 'Inativo' : 'Ativo' }}</td>
           <td>
             <a href="/users/{{$user->id}}">Visualizar</a>
           </td>
@@ -41,7 +41,7 @@
     </table>
   </div>
   
-  <a class="btn btn-primary" href="/users/create">
+  <a class="btn btn-primary" href="/users/new">
     Novo Usuário
   </a>
 
