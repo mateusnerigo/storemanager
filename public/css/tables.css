@@ -3,15 +3,14 @@
 }
 
 .table-container {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 30px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .table-container table {
-  width: 90%;
+  width: 95%;
   border-collapse: collapse;
 }
 

@@ -109,7 +109,7 @@ class UserController extends Controller
             'is_admin' => 'required',
         ], $this->msg);
 
-        if (isset($selected_user)) {
+        if (isset($user)) {
             if ($request->password != '') {
                 $user->password = $request->input('password');
             }
@@ -131,7 +131,7 @@ class UserController extends Controller
             $user->is_admin = $request->input('is_admin');
             $user->save();
 
-            return redirect('/users');
+            return redirect("/users/${id}");
         }
     }
 

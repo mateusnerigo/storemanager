@@ -9,6 +9,8 @@ class User extends Model
 {
     use SoftDeletes;
     
+    public $timestamps = true;
+
     protected $fillable = [
         'name', 
         'username',

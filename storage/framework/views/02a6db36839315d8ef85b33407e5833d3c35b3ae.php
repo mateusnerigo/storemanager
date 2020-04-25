@@ -16,7 +16,6 @@
 
     <form action="/users/<?php echo e($user->id); ?>" class="input-form" method="POST">
       <?php echo csrf_field(); ?>
-      <?php echo method_field('PUT'); ?>
 
       <div class="input-row"> <!-- name, rg, cpf -->
         <div class="input-group grid-size-6"> <!-- name input -->
@@ -40,7 +39,7 @@
           <input type="text" 
             name="rg" 
             id="rg" 
-            class="form-input sz4"
+            class="form-input"
             value="<?php echo e($user->rg); ?>"
             placeholder="Somente números">
           
@@ -57,7 +56,7 @@
           <input type="text" 
             name="cpf" 
             id="cpf" 
-            class="form-input sz4"
+            class="form-input"
             value="<?php echo e($user->cpf); ?>"
             placeholder="Somente números">
           
@@ -71,13 +70,12 @@
       </div>
 
       <div class="input-row"> <!-- username, password -->
-
         <div class="input-group grid-size-3"> <!-- is_admin input -->
           <label for="is_admin" class="form-label">Tipo de Acesso</label>
           <select 
             name="is_admin" 
             id="is_admin" 
-            class="form-input sz3">
+            class="form-input">
             <option value="" disabled selected>Selecione</option>
             <option value="0">Geral</option>
             <option value="1">Administrador</option>
@@ -96,7 +94,7 @@
           <input type="text" 
             name="username" 
             id="username" 
-            class="form-input sz4"
+            class="form-input"
             value="<?php echo e($user->username); ?>"
             placeholder="Usuário de acesso ao sistema">
           
@@ -113,7 +111,7 @@
           <input type="password" 
             name="password" 
             id="password" 
-            class="form-input sz4"
+            class="form-input"
             placeholder="Senha de acesso">
           
           <div class="invalid-msg">
@@ -129,7 +127,7 @@
           <input type="password" 
             name="confirm_password" 
             id="confirm_password" 
-            class="form-input sz4"
+            class="form-input"
             placeholder="Confirme a senha">
           
           <div class="invalid-msg">
@@ -141,13 +139,52 @@
         </div> <!-- end confirm_password input -->
       </div>
 
+      <div class="input-row"> <!-- email, phone -->  
+        <div class="input-group grid-size-3"> <!-- phone1 input -->
+          <label for="phone1" class="form-label">Telefone</label>
+          <input type="text" 
+            name="phone1" 
+            id="phone1" 
+            class="form-input"
+            value="<?php echo e($user->phone1); ?>"
+            placeholder="Fixo ou Celular">
+        </div> <!-- end phone1 input -->
+  
+        <div class="input-group grid-size-3"> <!-- phone2 input -->
+          <label for="phone2" class="form-label">Telefone Secundário (Opcional)</label>
+          <input type="text" 
+            name="phone2" 
+            id="phone2" 
+            class="form-input"
+            value="<?php echo e($user->phone2); ?>"
+            placeholder="Fixo ou Celular">
+        </div> <!-- end phone2 input -->
+
+        <div class="input-group grid-size-4"> <!-- email input -->
+          <label for="email" class="form-label">Email</label>
+          <input type="email" 
+            name="email" 
+            id="email" 
+            class="form-input"
+            value="<?php echo e($user->email); ?>"
+            placeholder="Email">
+          
+          <div class="invalid-msg">
+          <?php if($errors->has('email')): ?>
+            <?php echo e($errors->first('email')); ?>
+
+          <?php endif; ?>
+          </div>
+        </div> <!-- end email input -->
+      </div>
+
       <div class="input-row"> <!-- address -->
         <div class="input-group grid-size-6"> <!-- address input -->
           <label for="address" class="form-label">Endereço</label>
           <input type="text" 
             name="address" 
             id="address" 
-            class="form-input sz7"
+            class="form-input"
             value="<?php echo e($user->address); ?>"
             placeholder="Endereço">
         </div> <!-- end address input -->
@@ -157,7 +194,7 @@
           <input type="text" 
             name="address_number" 
             id="address_number" 
-            class="form-input sz4"
+            class="form-input"
             value="<?php echo e($user->address_number); ?>"
             placeholder="Número">
         </div> <!-- end address_number input -->
@@ -167,7 +204,7 @@
           <input type="text" 
             name="neighborhood" 
             id="neighborhood" 
-            class="form-input sz4"
+            class="form-input"
             value="<?php echo e($user->neighborhood); ?>"
             placeholder="Bairro">
         </div> <!-- end neighborhood input -->
@@ -179,7 +216,7 @@
           <input type="text" 
             name="city" 
             id="city" 
-            class="form-input sz7"
+            class="form-input"
             value="<?php echo e($user->city); ?>"
             placeholder="Cidade">
         </div> <!-- end city input -->
@@ -189,7 +226,7 @@
           <input type="text" 
             name="cep" 
             id="cep" 
-            class="form-input sz4"
+            class="form-input"
             value="<?php echo e($user->cep); ?>"
             placeholder="Somente números">
         </div> <!-- end cep input -->
@@ -198,52 +235,13 @@
           <label for="uf" class="form-label">Estado</label>
           <select name="uf" 
             id="uf" 
-            class="form-input sz4">
+            class="form-input">
             <option value="" disabled>Selecione o estado</option>
             <?php $__currentLoopData = $ufs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $uf): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <option value="<?php echo e($uf->id); ?>"><?php echo e($uf->name); ?></option>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           </select>
         </div> <!-- end uf input -->
-      </div>
-
-      <div class="input-row"> <!-- email, phone -->
-        <div class="input-group grid-size-4"> <!-- email input -->
-          <label for="email" class="form-label">Email</label>
-          <input type="email" 
-            name="email" 
-            id="email" 
-            class="form-input sz7"
-            value="<?php echo e($user->email); ?>"
-            placeholder="Email">
-          
-          <div class="invalid-msg">
-          <?php if($errors->has('email')): ?>
-            <?php echo e($errors->first('email')); ?>
-
-          <?php endif; ?>
-          </div>
-        </div> <!-- end email input -->
-  
-        <div class="input-group grid-size-3"> <!-- phone1 input -->
-          <label for="phone1" class="form-label">Telefone</label>
-          <input type="text" 
-            name="phone1" 
-            id="phone1" 
-            class="form-input sz4"
-            value="<?php echo e($user->phone1); ?>"
-            placeholder="Fixo ou Celular">
-        </div> <!-- end phone1 input -->
-  
-        <div class="input-group grid-size-3"> <!-- phone2 input -->
-          <label for="phone2" class="form-label">Telefone Secundário (Opcional)</label>
-          <input type="text" 
-            name="phone2" 
-            id="phone2" 
-            class="form-input sz4"
-            value="<?php echo e($user->phone2); ?>"
-            placeholder="Fixo ou Celular">
-        </div> <!-- end phone2 input -->
       </div>
 
       <div class="input-row"> <!-- obs -->

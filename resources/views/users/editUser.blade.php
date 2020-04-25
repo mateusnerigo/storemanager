@@ -16,7 +16,6 @@
 
     <form action="/users/{{ $user->id }}" class="input-form" method="POST">
       @csrf
-      @method('PUT')
 
       <div class="input-row"> <!-- name, rg, cpf -->
         <div class="input-group grid-size-6"> <!-- name input -->
@@ -39,7 +38,7 @@
           <input type="text" 
             name="rg" 
             id="rg" 
-            class="form-input sz4"
+            class="form-input"
             value="{{ $user->rg }}"
             placeholder="Somente números">
           
@@ -55,7 +54,7 @@
           <input type="text" 
             name="cpf" 
             id="cpf" 
-            class="form-input sz4"
+            class="form-input"
             value="{{ $user->cpf }}"
             placeholder="Somente números">
           
@@ -73,7 +72,7 @@
           <select 
             name="is_admin" 
             id="is_admin" 
-            class="form-input sz3">
+            class="form-input">
             <option value="" disabled selected>Selecione</option>
             <option value="0">Geral</option>
             <option value="1">Administrador</option>
@@ -91,7 +90,7 @@
           <input type="text" 
             name="username" 
             id="username" 
-            class="form-input sz4"
+            class="form-input"
             value="{{ $user->username }}"
             placeholder="Usuário de acesso ao sistema">
           
@@ -107,7 +106,7 @@
           <input type="password" 
             name="password" 
             id="password" 
-            class="form-input sz4"
+            class="form-input"
             placeholder="Senha de acesso">
           
           <div class="invalid-msg">
@@ -122,7 +121,7 @@
           <input type="password" 
             name="confirm_password" 
             id="confirm_password" 
-            class="form-input sz4"
+            class="form-input"
             placeholder="Confirme a senha">
           
           <div class="invalid-msg">
@@ -133,13 +132,51 @@
         </div> <!-- end confirm_password input -->
       </div>
 
+      <div class="input-row"> <!-- email, phone -->  
+        <div class="input-group grid-size-3"> <!-- phone1 input -->
+          <label for="phone1" class="form-label">Telefone</label>
+          <input type="text" 
+            name="phone1" 
+            id="phone1" 
+            class="form-input"
+            value="{{ $user->phone1 }}"
+            placeholder="Fixo ou Celular">
+        </div> <!-- end phone1 input -->
+  
+        <div class="input-group grid-size-3"> <!-- phone2 input -->
+          <label for="phone2" class="form-label">Telefone Secundário (Opcional)</label>
+          <input type="text" 
+            name="phone2" 
+            id="phone2" 
+            class="form-input"
+            value="{{ $user->phone2 }}"
+            placeholder="Fixo ou Celular">
+        </div> <!-- end phone2 input -->
+
+        <div class="input-group grid-size-4"> <!-- email input -->
+          <label for="email" class="form-label">Email</label>
+          <input type="email" 
+            name="email" 
+            id="email" 
+            class="form-input"
+            value="{{ $user->email }}"
+            placeholder="Email">
+          
+          <div class="invalid-msg">
+          @if ($errors->has('email'))
+            {{ $errors->first('email') }}
+          @endif
+          </div>
+        </div> <!-- end email input -->
+      </div>
+
       <div class="input-row"> <!-- address -->
         <div class="input-group grid-size-6"> <!-- address input -->
           <label for="address" class="form-label">Endereço</label>
           <input type="text" 
             name="address" 
             id="address" 
-            class="form-input sz7"
+            class="form-input"
             value="{{ $user->address }}"
             placeholder="Endereço">
         </div> <!-- end address input -->
@@ -149,7 +186,7 @@
           <input type="text" 
             name="address_number" 
             id="address_number" 
-            class="form-input sz4"
+            class="form-input"
             value="{{ $user->address_number }}"
             placeholder="Número">
         </div> <!-- end address_number input -->
@@ -159,7 +196,7 @@
           <input type="text" 
             name="neighborhood" 
             id="neighborhood" 
-            class="form-input sz4"
+            class="form-input"
             value="{{ $user->neighborhood }}"
             placeholder="Bairro">
         </div> <!-- end neighborhood input -->
@@ -171,7 +208,7 @@
           <input type="text" 
             name="city" 
             id="city" 
-            class="form-input sz7"
+            class="form-input"
             value="{{ $user->city }}"
             placeholder="Cidade">
         </div> <!-- end city input -->
@@ -181,7 +218,7 @@
           <input type="text" 
             name="cep" 
             id="cep" 
-            class="form-input sz4"
+            class="form-input"
             value="{{ $user->cep }}"
             placeholder="Somente números">
         </div> <!-- end cep input -->
@@ -190,51 +227,13 @@
           <label for="uf" class="form-label">Estado</label>
           <select name="uf" 
             id="uf" 
-            class="form-input sz4">
+            class="form-input">
             <option value="" disabled>Selecione o estado</option>
             @foreach ($ufs as $uf)
             <option value="{{$uf->id}}">{{$uf->name}}</option>
             @endforeach
           </select>
         </div> <!-- end uf input -->
-      </div>
-
-      <div class="input-row"> <!-- email, phone -->
-        <div class="input-group grid-size-4"> <!-- email input -->
-          <label for="email" class="form-label">Email</label>
-          <input type="email" 
-            name="email" 
-            id="email" 
-            class="form-input sz7"
-            value="{{ $user->email }}"
-            placeholder="Email">
-          
-          <div class="invalid-msg">
-          @if ($errors->has('email'))
-            {{ $errors->first('email') }}
-          @endif
-          </div>
-        </div> <!-- end email input -->
-  
-        <div class="input-group grid-size-3"> <!-- phone1 input -->
-          <label for="phone1" class="form-label">Telefone</label>
-          <input type="text" 
-            name="phone1" 
-            id="phone1" 
-            class="form-input sz4"
-            value="{{ $user->phone1 }}"
-            placeholder="Fixo ou Celular">
-        </div> <!-- end phone1 input -->
-  
-        <div class="input-group grid-size-3"> <!-- phone2 input -->
-          <label for="phone2" class="form-label">Telefone Secundário (Opcional)</label>
-          <input type="text" 
-            name="phone2" 
-            id="phone2" 
-            class="form-input sz4"
-            value="{{ $user->phone2 }}"
-            placeholder="Fixo ou Celular">
-        </div> <!-- end phone2 input -->
       </div>
 
       <div class="input-row"> <!-- obs -->

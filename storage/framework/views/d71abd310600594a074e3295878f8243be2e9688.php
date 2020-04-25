@@ -22,7 +22,7 @@
           <input type="text" 
             name="name" 
             id="name" 
-            class="form-input sz7"
+            class="form-input"
             placeholder="Nome do novo usuário"> 
           <div class="invalid-msg">
           <?php if($errors->has('name')): ?>
@@ -37,7 +37,7 @@
           <input type="text" 
             name="rg" 
             id="rg" 
-            class="form-input sz4"
+            class="form-input"
             placeholder="Somente números">
           
           <div class="invalid-msg">
@@ -53,7 +53,7 @@
           <input type="text" 
             name="cpf" 
             id="cpf" 
-            class="form-input sz4"
+            class="form-input"
             placeholder="Somente números">
           
           <div class="invalid-msg">
@@ -71,7 +71,7 @@
           <select 
             name="is_admin" 
             id="is_admin" 
-            class="form-input sz3">
+            class="form-input">
             <option value="" disabled selected>Selecione</option>
             <option value="0">Geral</option>
             <option value="1">Administrador</option>
@@ -90,7 +90,7 @@
           <input type="text" 
             name="username" 
             id="username" 
-            class="form-input sz4"
+            class="form-input"
             placeholder="Usuário de acesso ao sistema">
           
           <div class="invalid-msg">
@@ -106,7 +106,7 @@
           <input type="password" 
             name="password" 
             id="password" 
-            class="form-input sz4"
+            class="form-input"
             placeholder="Senha de acesso">
           
           <div class="invalid-msg">
@@ -122,7 +122,7 @@
           <input type="password" 
             name="confirm_password" 
             id="confirm_password" 
-            class="form-input sz4"
+            class="form-input"
             placeholder="Confirme a senha">
           
           <div class="invalid-msg">
@@ -134,74 +134,32 @@
         </div> <!-- end confirm_password input -->
       </div>
 
-      <div class="input-row"> <!-- address -->
-        <div class="input-group grid-size-6"> <!-- address input -->
-          <label for="address" class="form-label">Endereço</label>
-          <input type="text" 
-            name="address" 
-            id="address" 
-            class="form-input sz7"
-            placeholder="Endereço">
-        </div> <!-- end address input -->
-  
-        <div class="input-group grid-size-1"> <!-- address_number input -->
-          <label for="address_number" class="form-label">Nº</label>
-          <input type="text" 
-            name="address_number" 
-            id="address_number" 
-            class="form-input sz4"
-            placeholder="Número do imóvel">
-        </div> <!-- end address_number input -->
-  
-        <div class="input-group grid-size-3"> <!-- neighborhood input -->
-          <label for="neighborhood" class="form-label">Bairro</label>
-          <input type="text" 
-            name="neighborhood" 
-            id="neighborhood" 
-            class="form-input sz4"
-            placeholder="Bairro">
-        </div> <!-- end neighborhood input -->
-      </div>
-
-      <div class="input-row"> <!-- cep, city, uf -->
-        <div class="input-group grid-size-4"> <!-- cep input -->
-          <label for="cep" class="form-label">CEP</label>
-          <input type="text" 
-            name="cep" 
-            id="cep" 
-            class="form-input sz7"
-            placeholder="Somente números">
-        </div> <!-- end cep input -->
-  
-        <div class="input-group grid-size-2"> <!-- city input -->
-          <label for="city" class="form-label">Cidade</label>
-          <input type="text" 
-            name="city" 
-            id="city" 
-            class="form-input sz4"
-            placeholder="Cidade">
-        </div> <!-- end city input -->
-  
-        <div class="input-group grid-size-2"> <!-- uf input -->
-          <label for="uf" class="form-label">Estado</label>
-          <select name="uf" 
-            id="uf" 
-            class="form-input sz4">
-            <option value="" disabled selected>Selecione o estado</option>
-            <?php $__currentLoopData = $ufs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $uf): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <option value="<?php echo e($uf->id); ?>"><?php echo e($uf->name); ?></option>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-          </select>
-        </div> <!-- end uf input -->
-      </div>
-
+      
       <div class="input-row"> <!-- email, phone -->
+        <div class="input-group grid-size-3"> <!-- phone1 input -->
+          <label for="phone1" class="form-label">Telefone</label>
+          <input type="text" 
+            name="phone1" 
+            id="phone1" 
+            class="form-input"
+            placeholder="Fixo ou Celular">
+        </div> <!-- end phone1 input -->
+  
+        <div class="input-group grid-size-3"> <!-- phone2 input -->
+          <label for="phone2" class="form-label">Telefone Secundário</label>
+          <input type="text" 
+            name="phone2" 
+            id="phone2" 
+            class="form-input"
+            placeholder="Fixo ou Celular">
+        </div> <!-- end phone2 input -->
+
         <div class="input-group grid-size-4"> <!-- email input -->
           <label for="email" class="form-label">Email</label>
           <input type="email" 
             name="email" 
             id="email" 
-            class="form-input sz7"
+            class="form-input"
             placeholder="Email">
           
           <div class="invalid-msg">
@@ -211,24 +169,67 @@
           <?php endif; ?>
           </div>
         </div> <!-- end email input -->
-  
-        <div class="input-group grid-size-3"> <!-- phone1 input -->
-          <label for="phone1" class="form-label">Telefone</label>
+      </div>
+
+      <div class="input-row"> <!-- address -->
+        <div class="input-group grid-size-6"> <!-- address input -->
+          <label for="address" class="form-label">Endereço</label>
           <input type="text" 
-            name="phone1" 
-            id="phone1" 
-            class="form-input sz4"
-            placeholder="Fixo ou Celular">
-        </div> <!-- end phone1 input -->
+            name="address" 
+            id="address" 
+            class="form-input"
+            placeholder="Endereço">
+        </div> <!-- end address input -->
   
-        <div class="input-group grid-size-3"> <!-- phone2 input -->
-          <label for="phone2" class="form-label">Telefone Secundário</label>
+        <div class="input-group grid-size-1"> <!-- address_number input -->
+          <label for="address_number" class="form-label">Nº</label>
           <input type="text" 
-            name="phone2" 
-            id="phone2" 
-            class="form-input sz4"
-            placeholder="Fixo ou Celular">
-        </div> <!-- end phone2 input -->
+            name="address_number" 
+            id="address_number" 
+            class="form-input"
+            placeholder="Número do imóvel">
+        </div> <!-- end address_number input -->
+  
+        <div class="input-group grid-size-3"> <!-- neighborhood input -->
+          <label for="neighborhood" class="form-label">Bairro</label>
+          <input type="text" 
+            name="neighborhood" 
+            id="neighborhood" 
+            class="form-input"
+            placeholder="Bairro">
+        </div> <!-- end neighborhood input -->
+      </div>
+
+      <div class="input-row"> <!-- cep, city, uf -->  
+        <div class="input-group grid-size-4"> <!-- city input -->
+          <label for="city" class="form-label">Cidade</label>
+          <input type="text" 
+            name="city" 
+            id="city" 
+            class="form-input"
+            placeholder="Cidade">
+        </div> <!-- end city input -->
+
+        <div class="input-group grid-size-2"> <!-- cep input -->
+          <label for="cep" class="form-label">CEP</label>
+          <input type="text" 
+            name="cep" 
+            id="cep" 
+            class="form-input"
+            placeholder="Somente números">
+        </div> <!-- end cep input -->
+  
+        <div class="input-group grid-size-4"> <!-- uf input -->
+          <label for="uf" class="form-label">Estado</label>
+          <select name="uf" 
+            id="uf" 
+            class="form-input">
+            <option value="" disabled selected>Selecione o estado</option>
+            <?php $__currentLoopData = $ufs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $uf): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <option value="<?php echo e($uf->id); ?>"><?php echo e($uf->name); ?></option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </select>
+        </div> <!-- end uf input -->
       </div>
       
       <div class="input-row"> <!-- obs -->
