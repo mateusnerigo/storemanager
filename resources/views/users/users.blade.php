@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Usuários do Sistema')
 @section('content')
-    
-<div class="table-page">
-  
   <div class="page-title-container">
     <div class="page-icon">
       <img src="{{asset('img/users.png')}}" alt="-">
@@ -18,11 +15,13 @@
   <div class="table-container">
     <table>
       <thead>
-        <th>Nome</th>
-        <th>Usuário</th>
-        <th>Tipo de Acesso</th>
-        <th>Situação</th>
-        <th></th>
+        <tr>
+          <td>Nome</td>
+          <td>Usuário</td>
+          <td>Tipo de Acesso</td>
+          <td>Situação</td>
+          <td class="table-empty"> </td>
+        </tr>
       </thead>
       <tbody>
         @foreach ($users as $user)
@@ -31,7 +30,7 @@
           <td>{{ $user->username }}</td>
           <td>{{ ($user->is_admin) ? 'Administrador' : 'Geral' }}</td>
           <td>{{ ($user->deleted_at) ? 'Inativo' : 'Ativo' }}</td>
-          <td>
+          <td class="table-action">
             <a href="/users/{{$user->id}}">Visualizar</a>
           </td>
         </tr>
@@ -41,10 +40,10 @@
     </table>
   </div>
   
-  <a class="btn btn-primary" href="/users/new">
-    Novo Usuário
-  </a>
-
-</div>
+  <div class="button-field">
+    <a class="btn btn-primary" href="/users/new">
+      Novo Usuário
+    </a>
+  </div>
 
 @endsection

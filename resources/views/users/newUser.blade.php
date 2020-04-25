@@ -13,16 +13,16 @@
   </div>
 
   <div class="form-container">
-    <form action="/users" class="input-form" method="POST">
+    <form action="/users" class="page" method="POST">
       @csrf
 
-      <div class="input-row"> <!-- name, rg, cpf -->
-        <div class="input-group grid-size-6"> <!-- name input -->
-          <label for="name" class="form-label">Nome</label>
+      <div class="row"> <!-- name, rg, cpf -->
+        <div class="group grid-size-6"> <!-- name input -->
+          <label for="name" class="label">Nome</label>
           <input type="text" 
             name="name" 
             id="name" 
-            class="form-input"
+            class="field border-bottom-primary"
             placeholder="Nome do novo usuário"> 
           <div class="invalid-msg">
           @if ($errors->has('name'))
@@ -31,12 +31,12 @@
           </div>
         </div> <!-- end name input -->
 
-        <div class="input-group grid-size-2"> <!-- rg input -->
-          <label for="rg" class="form-label">R. G.</label>
+        <div class="group grid-size-2"> <!-- rg input -->
+          <label for="rg" class="label">R. G.</label>
           <input type="text" 
             name="rg" 
             id="rg" 
-            class="form-input"
+            class="field border-bottom-primary"
             placeholder="Somente números">
           
           <div class="invalid-msg">
@@ -46,12 +46,12 @@
           </div>
         </div> <!-- end rg input -->
   
-        <div class="input-group grid-size-2"> <!-- cpf input -->
-          <label for="cpf" class="form-label">C. P. F.</label>
+        <div class="group grid-size-2"> <!-- cpf input -->
+          <label for="cpf" class="label">C. P. F.</label>
           <input type="text" 
             name="cpf" 
             id="cpf" 
-            class="form-input"
+            class="field border-bottom-primary"
             placeholder="Somente números">
           
           <div class="invalid-msg">
@@ -62,13 +62,13 @@
         </div> <!-- end cpf input -->
       </div>
       
-      <div class="input-row"> <!-- is_admin, username, password -->
-        <div class="input-group grid-size-3"> <!-- is_admin input -->
-          <label for="is_admin" class="form-label">Tipo de Acesso</label>
+      <div class="row"> <!-- is_admin, username, password -->
+        <div class="group grid-size-3"> <!-- is_admin input -->
+          <label for="is_admin" class="label">Tipo de Acesso</label>
           <select 
             name="is_admin" 
             id="is_admin" 
-            class="form-input">
+            class="field border-bottom-primary">
             <option value="" disabled selected>Selecione</option>
             <option value="0">Geral</option>
             <option value="1">Administrador</option>
@@ -81,12 +81,12 @@
           </div>
         </div> <!-- end is_admin input -->
 
-        <div class="input-group grid-size-3"> <!-- username input -->
-          <label for="username" class="form-label">Usuário</label>
+        <div class="group grid-size-3"> <!-- username input -->
+          <label for="username" class="label">Usuário</label>
           <input type="text" 
             name="username" 
             id="username" 
-            class="form-input"
+            class="field border-bottom-primary"
             placeholder="Usuário de acesso ao sistema">
           
           <div class="invalid-msg">
@@ -96,12 +96,12 @@
           </div>
         </div> <!-- end username input -->
         
-        <div class="input-group grid-size-2"> <!-- password input -->
-          <label for="password" class="form-label">Senha</label>
+        <div class="group grid-size-2"> <!-- password input -->
+          <label for="password" class="label">Senha</label>
           <input type="password" 
             name="password" 
             id="password" 
-            class="form-input"
+            class="field border-bottom-primary"
             placeholder="Senha de acesso">
           
           <div class="invalid-msg">
@@ -111,12 +111,12 @@
           </div>
         </div> <!-- end password input -->
   
-        <div class="input-group grid-size-2"> <!-- confirm_password input -->
-          <label for="confirm_password" class="form-label">Confirmar Senha</label>
+        <div class="group grid-size-2"> <!-- confirm_password input -->
+          <label for="confirm_password" class="label">Confirmar Senha</label>
           <input type="password" 
             name="confirm_password" 
             id="confirm_password" 
-            class="form-input"
+            class="field border-bottom-primary"
             placeholder="Confirme a senha">
           
           <div class="invalid-msg">
@@ -128,31 +128,31 @@
       </div>
 
       
-      <div class="input-row"> <!-- email, phone -->
-        <div class="input-group grid-size-3"> <!-- phone1 input -->
-          <label for="phone1" class="form-label">Telefone</label>
+      <div class="row"> <!-- email, phone -->
+        <div class="group grid-size-3"> <!-- phone1 input -->
+          <label for="phone1" class="label">Telefone</label>
           <input type="text" 
             name="phone1" 
             id="phone1" 
-            class="form-input"
+            class="field border-bottom-primary"
             placeholder="Fixo ou Celular">
         </div> <!-- end phone1 input -->
   
-        <div class="input-group grid-size-3"> <!-- phone2 input -->
-          <label for="phone2" class="form-label">Telefone Secundário</label>
+        <div class="group grid-size-3"> <!-- phone2 input -->
+          <label for="phone2" class="label">Telefone Secundário</label>
           <input type="text" 
             name="phone2" 
             id="phone2" 
-            class="form-input"
-            placeholder="Fixo ou Celular">
+            class="field border-bottom-primary"
+            placeholder="Opcional">
         </div> <!-- end phone2 input -->
 
-        <div class="input-group grid-size-4"> <!-- email input -->
-          <label for="email" class="form-label">Email</label>
+        <div class="group grid-size-4"> <!-- email input -->
+          <label for="email" class="label">Email</label>
           <input type="email" 
             name="email" 
             id="email" 
-            class="form-input"
+            class="field border-bottom-primary"
             placeholder="Email">
           
           <div class="invalid-msg">
@@ -163,59 +163,59 @@
         </div> <!-- end email input -->
       </div>
 
-      <div class="input-row"> <!-- address -->
-        <div class="input-group grid-size-6"> <!-- address input -->
-          <label for="address" class="form-label">Endereço</label>
+      <div class="row"> <!-- address -->
+        <div class="group grid-size-6"> <!-- address input -->
+          <label for="address" class="label">Endereço</label>
           <input type="text" 
             name="address" 
             id="address" 
-            class="form-input"
+            class="field border-bottom-primary"
             placeholder="Endereço">
         </div> <!-- end address input -->
   
-        <div class="input-group grid-size-1"> <!-- address_number input -->
-          <label for="address_number" class="form-label">Nº</label>
+        <div class="group grid-size-1"> <!-- address_number input -->
+          <label for="address_number" class="label">Nº</label>
           <input type="text" 
             name="address_number" 
             id="address_number" 
-            class="form-input"
+            class="field border-bottom-primary"
             placeholder="Número do imóvel">
         </div> <!-- end address_number input -->
   
-        <div class="input-group grid-size-3"> <!-- neighborhood input -->
-          <label for="neighborhood" class="form-label">Bairro</label>
+        <div class="group grid-size-3"> <!-- neighborhood input -->
+          <label for="neighborhood" class="label">Bairro</label>
           <input type="text" 
             name="neighborhood" 
             id="neighborhood" 
-            class="form-input"
+            class="field border-bottom-primary"
             placeholder="Bairro">
         </div> <!-- end neighborhood input -->
       </div>
 
-      <div class="input-row"> <!-- cep, city, uf -->  
-        <div class="input-group grid-size-4"> <!-- city input -->
-          <label for="city" class="form-label">Cidade</label>
+      <div class="row"> <!-- cep, city, uf -->  
+        <div class="group grid-size-4"> <!-- city input -->
+          <label for="city" class="label">Cidade</label>
           <input type="text" 
             name="city" 
             id="city" 
-            class="form-input"
+            class="field border-bottom-primary"
             placeholder="Cidade">
         </div> <!-- end city input -->
 
-        <div class="input-group grid-size-2"> <!-- cep input -->
-          <label for="cep" class="form-label">CEP</label>
+        <div class="group grid-size-2"> <!-- cep input -->
+          <label for="cep" class="label">CEP</label>
           <input type="text" 
             name="cep" 
             id="cep" 
-            class="form-input"
+            class="field border-bottom-primary"
             placeholder="Somente números">
         </div> <!-- end cep input -->
   
-        <div class="input-group grid-size-4"> <!-- uf input -->
-          <label for="uf" class="form-label">Estado</label>
+        <div class="group grid-size-4"> <!-- uf input -->
+          <label for="uf" class="label">Estado</label>
           <select name="uf" 
             id="uf" 
-            class="form-input">
+            class="field border-bottom-primary">
             <option value="" disabled selected>Selecione o estado</option>
             @foreach ($ufs as $uf)
             <option value="{{$uf->id}}">{{$uf->name}}</option>
@@ -224,12 +224,12 @@
         </div> <!-- end uf input -->
       </div>
       
-      <div class="input-row"> <!-- obs -->
-        <div class="input-group grid-size-10"> <!-- obs input -->
-          <label for="obs" class="form-label">Observações (Opcional)</label>
+      <div class="row"> <!-- obs -->
+        <div class="group grid-size-10"> <!-- obs input -->
+          <label for="obs" class="label">Observações (Opcional)</label>
           <textarea name="obs" 
             id="obs"  
-            class="form-input form-text-area" 
+            class="field border-bottom-primary no-resize" 
             rows="1" 
             maxlength="150" 
             placeholder="Adicione alguma observação sobre o usuário"></textarea>

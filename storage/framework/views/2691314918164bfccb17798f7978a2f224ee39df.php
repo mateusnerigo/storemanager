@@ -11,10 +11,8 @@
 
   <link rel="stylesheet" href="<?php echo e(asset('css/app.css')); ?>">
   <link rel="stylesheet" href="<?php echo e(asset('css/buttons.css')); ?>">
-  <link rel="stylesheet" href="<?php echo e(asset('css/forms.css')); ?>">
   <link rel="stylesheet" href="<?php echo e(asset('css/nav.css')); ?>">
   <link rel="stylesheet" href="<?php echo e(asset('css/tables.css')); ?>">
-  <link rel="stylesheet" href="<?php echo e(asset('css/data.css')); ?>">
 </head>
 <body class="app">
    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>

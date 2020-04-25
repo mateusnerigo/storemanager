@@ -24,6 +24,7 @@
 .nav-header > a {
   text-decoration: none;
   color: var(--text-medium);
+  width: 100%;
 }
 
 .nav-item {
@@ -61,6 +62,7 @@
   bottom: 0px;
   width: 250px;
   box-shadow: 0px 0px 25px -15px black ;
+  transition: 0.3s letter-spacing;
 }
 
 .nav-horizontal-divider {
@@ -98,7 +100,29 @@
     font-size: 1rem;
     padding: 2px 20px;
   }
-  .nav-icon {
-    display: none;
+}
+
+@media only screen and (max-width: 995px) {
+  .nav-header { font-size: 1.6rem }
+  .nav-link { font-size: 1.0rem }
+  .last-nav-item { width: 200px}
+}
+
+@media only screen and (max-width: 815px) {
+  .nav-header { 
+    font-size: 1.2rem;
+    padding: 20px 10px 20px 10px; 
   }
+  .nav-link { 
+    font-size: 1.0rem; 
+    padding: 10px;
+  }
+  .last-nav-item { width: 180px}
+}
+
+@media only screen and (max-width: 775px) {
+  .nav-header { padding: 20px 10px 0px 10px; }
+  .nav-link { padding: 10px 20px; }
+  .nav-text, .nav-header > a { display: none; }
+  .last-nav-item { width: 60px; }
 }

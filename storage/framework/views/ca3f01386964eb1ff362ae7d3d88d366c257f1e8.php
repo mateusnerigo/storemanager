@@ -19,113 +19,117 @@
       </div>
 
       <div class="page-description">
-        Tipo de acesso: 
-        
-        <strong>
-          <?php echo e($user->is_admin ? 'Administrador - ' : 'Geral - '); ?>
+        <span>
+          <span>Tipo de acesso: </span>
+          
+          <strong>
+            <?php echo e($user->is_admin ? 'Administrador' : 'Geral'); ?>
 
-        </strong>
+          </strong>
+        </span>
         
-        Usuário do sistema: 
-        
-        <strong>
-          <?php echo e($user->username); ?>
+        <span>
+          <span>Usuário do sistema: </span> 
+          
+          <strong>
+            <?php echo e($user->username); ?>
 
-        </strong>
+          </strong>
+        </span>
       </div>
     </div>
   </div>
    
   <div class="show-container">
-    <div class="show-page">
-      <div class="show-row">
+    <div class="page">
+      <div class="row">
   
-        <div class="show-group grid-size-4"> <!-- email input -->
-          <div class="show-label">Email</div>
-          <div class="show-data"><?php echo e($user->email ?? '--'); ?></div>
+        <div class="group grid-size-4"> <!-- email input -->
+          <div class="label">Email</div>
+          <div class="field border-top-primary"><?php echo e($user->email ?? '--'); ?></div>
         </div>
   
-        <div class="show-group grid-size-3"> <!-- phone1 input -->
-          <div class="show-label">Telefone 1</div>
-          <div class="show-data"><?php echo e($user->phone1 ?? '--'); ?></div>
+        <div class="group grid-size-3"> <!-- phone1 input -->
+          <div class="label">Telefone 1</div>
+          <div class="field border-top-primary"><?php echo e($user->phone1 ?? '--'); ?></div>
         </div>
   
-        <div class="show-group grid-size-3"> <!-- phone2 input -->
-          <div class="show-label">Telefone 2</div>
-          <div class="show-data"><?php echo e($user->phone2 ?? '--'); ?></div>
+        <div class="group grid-size-3"> <!-- phone2 input -->
+          <div class="label">Telefone 2</div>
+          <div class="field border-top-primary"><?php echo e($user->phone2 ?? '--'); ?></div>
         </div>
       </div>      
         
-      <div class="show-row">
-        <div class="show-group grid-size-6"></div> <!-- it pushes rg and cpf field to the right-->
+      <div class="row">
+        <div class="group grid-size-6"></div> <!-- it pushes rg and cpf field to the right-->
 
-        <div class="show-group grid-size-2"> <!-- rg input -->
-          <div class="show-label">R. G.</div>
-          <div class="show-data"><?php echo e($user->rg ?? '--'); ?></div>
+        <div class="group grid-size-2"> <!-- rg input -->
+          <div class="label">R. G.</div>
+          <div class="field border-top-primary"><?php echo e($user->rg ?? '--'); ?></div>
         </div>
   
-        <div class="show-group grid-size-2"> <!-- cpf input -->
-          <div class="show-label">C. P. F.</div>
-          <div class="show-data"><?php echo e($user->cpf ?? '--'); ?></div>
+        <div class="group grid-size-2"> <!-- cpf input -->
+          <div class="label">C. P. F.</div>
+          <div class="field border-top-primary"><?php echo e($user->cpf ?? '--'); ?></div>
         </div>
       </div>
 
-      <div class="show-row">
-        <div class="show-group grid-size-6"> <!-- address -->
-          <div class="show-label">Endereço</div>
-          <div class="show-data"><?php echo e($user->address ?? '--'); ?></div>
+      <div class="row">
+        <div class="group grid-size-6"> <!-- address -->
+          <div class="label">Endereço</div>
+          <div class="field border-top-primary"><?php echo e($user->address ?? '--'); ?></div>
         </div>
   
-        <div class="show-group grid-size-"> <!-- address_number -->
-          <div class="show-label">Nº </div>
-          <div class="show-data"><?php echo e($user->address_number ?? '--'); ?></div>
+        <div class="group grid-size-"> <!-- address_number -->
+          <div class="label">Nº </div>
+          <div class="field border-top-primary"><?php echo e($user->address_number ?? '--'); ?></div>
         </div>
   
-        <div class="show-group grid-size-3"> <!-- neighborhood -->
-          <div class="show-label">Bairro</div>
-          <div class="show-data"><?php echo e($user->neighborhood ?? '--'); ?></div>
+        <div class="group grid-size-3"> <!-- neighborhood -->
+          <div class="label">Bairro</div>
+          <div class="field border-top-primary"><?php echo e($user->neighborhood ?? '--'); ?></div>
         </div>
       </div>
   
-      <div class="show-row">
-        <div class="show-group grid-size-4"> <!-- city -->
-          <div class="show-label">Cidade</div>
-          <div class="show-data"><?php echo e($user->city ?? '--'); ?></div>
+      <div class="row">
+        <div class="group grid-size-4"> <!-- city -->
+          <div class="label">Cidade</div>
+          <div class="field border-top-primary"><?php echo e($user->city ?? '--'); ?></div>
         </div>
   
-        <div class="show-group grid-size-2"> <!-- cep -->
-          <div class="show-label">CEP</div>
-          <div class="show-data"><?php echo e($user->cep ?? '--'); ?></div>
+        <div class="group grid-size-2"> <!-- cep -->
+          <div class="label">CEP</div>
+          <div class="field border-top-primary"><?php echo e($user->cep ?? '--'); ?></div>
         </div>
 
-        <div class="show-group grid-size-4"> <!-- uf -->
-          <div class="show-label">Estado</div>
-          <div class="show-data"><?php echo e($ufs[$user->uf_id -1]->name ?? '--'); ?></div>
+        <div class="group grid-size-4"> <!-- uf -->
+          <div class="label">Estado</div>
+          <div class="field border-top-primary"><?php echo e($ufs[$user->uf_id -1]->name ?? '--'); ?></div>
         </div>        
       </div>
 
-      <div class="show-row">
-        <div class="show-group grid-size-4"> <!-- deleted_at -->
-          <div class="show-label">Inativado em</div>
-          <div class="show-data"><?php echo e($user->deleted_at ? $user->deleted_at : 'Usuário atualmente ativo'); ?></div>
+      <div class="row">
+        <div class="group grid-size-4"> <!-- deleted_at -->
+          <div class="label">Inativado em</div>
+          <div class="field border-top-primary"><?php echo e($user->deleted_at ? $user->deleted_at : 'Usuário atualmente ativo'); ?></div>
         </div>
   
-        <div class="show-group grid-size-3"> <!-- created_at -->
-          <div class="show-label">Cadastrado em</div>
-          <div class="show-data"><?php echo e($user->created_at); ?></div>
+        <div class="group grid-size-3"> <!-- created_at -->
+          <div class="label">Cadastrado em</div>
+          <div class="field border-top-primary"><?php echo e($user->created_at); ?></div>
         </div>
   
-        <div class="show-group grid-size-3"> <!-- updated+at -->
-          <div class="show-label">Atualizado em</div>
-          <div class="show-data"><?php echo e($user->updated_at); ?></div>
+        <div class="group grid-size-3"> <!-- updated+at -->
+          <div class="label">Atualizado em</div>
+          <div class="field border-top-primary"><?php echo e($user->updated_at); ?></div>
         </div>
       </div>
 
       <?php if($user->obs): ?>
-      <div class="show-row"> <!-- obs -->
-        <div class="show-group grid-size-">
-          <div class="show-label">Observações</div>
-          <div class="show-data"><?php echo e($user->obs); ?></div>
+      <div class="row"> <!-- obs -->
+        <div class="group grid-size-10">
+          <div class="label">Observações</div>
+          <div class="field border-top-primary"><?php echo e($user->obs); ?></div>
         </div>
       </div>   
       <?php endif; ?>

@@ -17,111 +17,115 @@
       </div>
 
       <div class="page-description">
-        Tipo de acesso: 
+        <span>
+          <span>Tipo de acesso: </span>
+          
+          <strong>
+            {{ $user->is_admin ? 'Administrador' : 'Geral' }}
+          </strong>
+        </span>
         
-        <strong>
-          {{ $user->is_admin ? 'Administrador - ' : 'Geral - ' }}
-        </strong>
-        
-        Usuário do sistema: 
-        
-        <strong>
-          {{ $user->username }}
-        </strong>
+        <span>
+          <span>Usuário do sistema: </span> 
+          
+          <strong>
+            {{ $user->username }}
+          </strong>
+        </span>
       </div>
     </div>
   </div>
    
   <div class="show-container">
-    <div class="show-page">
-      <div class="show-row">
+    <div class="page">
+      <div class="row">
   
-        <div class="show-group grid-size-4"> <!-- email input -->
-          <div class="show-label">Email</div>
-          <div class="show-data">{{ $user->email ?? '--' }}</div>
+        <div class="group grid-size-4"> <!-- email input -->
+          <div class="label">Email</div>
+          <div class="field border-top-primary">{{ $user->email ?? '--' }}</div>
         </div>
   
-        <div class="show-group grid-size-3"> <!-- phone1 input -->
-          <div class="show-label">Telefone 1</div>
-          <div class="show-data">{{ $user->phone1 ?? '--' }}</div>
+        <div class="group grid-size-3"> <!-- phone1 input -->
+          <div class="label">Telefone 1</div>
+          <div class="field border-top-primary">{{ $user->phone1 ?? '--' }}</div>
         </div>
   
-        <div class="show-group grid-size-3"> <!-- phone2 input -->
-          <div class="show-label">Telefone 2</div>
-          <div class="show-data">{{ $user->phone2 ?? '--' }}</div>
+        <div class="group grid-size-3"> <!-- phone2 input -->
+          <div class="label">Telefone 2</div>
+          <div class="field border-top-primary">{{ $user->phone2 ?? '--' }}</div>
         </div>
       </div>      
         
-      <div class="show-row">
-        <div class="show-group grid-size-6"></div> <!-- it pushes rg and cpf field to the right-->
+      <div class="row">
+        <div class="group grid-size-6"></div> <!-- it pushes rg and cpf field to the right-->
 
-        <div class="show-group grid-size-2"> <!-- rg input -->
-          <div class="show-label">R. G.</div>
-          <div class="show-data">{{ $user->rg ?? '--' }}</div>
+        <div class="group grid-size-2"> <!-- rg input -->
+          <div class="label">R. G.</div>
+          <div class="field border-top-primary">{{ $user->rg ?? '--' }}</div>
         </div>
   
-        <div class="show-group grid-size-2"> <!-- cpf input -->
-          <div class="show-label">C. P. F.</div>
-          <div class="show-data">{{ $user->cpf ?? '--' }}</div>
+        <div class="group grid-size-2"> <!-- cpf input -->
+          <div class="label">C. P. F.</div>
+          <div class="field border-top-primary">{{ $user->cpf ?? '--' }}</div>
         </div>
       </div>
 
-      <div class="show-row">
-        <div class="show-group grid-size-6"> <!-- address -->
-          <div class="show-label">Endereço</div>
-          <div class="show-data">{{ $user->address ?? '--' }}</div>
+      <div class="row">
+        <div class="group grid-size-6"> <!-- address -->
+          <div class="label">Endereço</div>
+          <div class="field border-top-primary">{{ $user->address ?? '--' }}</div>
         </div>
   
-        <div class="show-group grid-size-"> <!-- address_number -->
-          <div class="show-label">Nº </div>
-          <div class="show-data">{{ $user->address_number ?? '--' }}</div>
+        <div class="group grid-size-"> <!-- address_number -->
+          <div class="label">Nº </div>
+          <div class="field border-top-primary">{{ $user->address_number ?? '--' }}</div>
         </div>
   
-        <div class="show-group grid-size-3"> <!-- neighborhood -->
-          <div class="show-label">Bairro</div>
-          <div class="show-data">{{ $user->neighborhood ?? '--' }}</div>
+        <div class="group grid-size-3"> <!-- neighborhood -->
+          <div class="label">Bairro</div>
+          <div class="field border-top-primary">{{ $user->neighborhood ?? '--' }}</div>
         </div>
       </div>
   
-      <div class="show-row">
-        <div class="show-group grid-size-4"> <!-- city -->
-          <div class="show-label">Cidade</div>
-          <div class="show-data">{{ $user->city ?? '--'}}</div>
+      <div class="row">
+        <div class="group grid-size-4"> <!-- city -->
+          <div class="label">Cidade</div>
+          <div class="field border-top-primary">{{ $user->city ?? '--'}}</div>
         </div>
   
-        <div class="show-group grid-size-2"> <!-- cep -->
-          <div class="show-label">CEP</div>
-          <div class="show-data">{{ $user->cep ?? '--' }}</div>
+        <div class="group grid-size-2"> <!-- cep -->
+          <div class="label">CEP</div>
+          <div class="field border-top-primary">{{ $user->cep ?? '--' }}</div>
         </div>
 
-        <div class="show-group grid-size-4"> <!-- uf -->
-          <div class="show-label">Estado</div>
-          <div class="show-data">{{ $ufs[$user->uf_id -1]->name ?? '--' }}</div>
+        <div class="group grid-size-4"> <!-- uf -->
+          <div class="label">Estado</div>
+          <div class="field border-top-primary">{{ $ufs[$user->uf_id -1]->name ?? '--' }}</div>
         </div>        
       </div>
 
-      <div class="show-row">
-        <div class="show-group grid-size-4"> <!-- deleted_at -->
-          <div class="show-label">Inativado em</div>
-          <div class="show-data">{{ $user->deleted_at ? $user->deleted_at : 'Usuário atualmente ativo'  }}</div>
+      <div class="row">
+        <div class="group grid-size-4"> <!-- deleted_at -->
+          <div class="label">Inativado em</div>
+          <div class="field border-top-primary">{{ $user->deleted_at ? $user->deleted_at : 'Usuário atualmente ativo'  }}</div>
         </div>
   
-        <div class="show-group grid-size-3"> <!-- created_at -->
-          <div class="show-label">Cadastrado em</div>
-          <div class="show-data">{{ $user->created_at }}</div>
+        <div class="group grid-size-3"> <!-- created_at -->
+          <div class="label">Cadastrado em</div>
+          <div class="field border-top-primary">{{ $user->created_at }}</div>
         </div>
   
-        <div class="show-group grid-size-3"> <!-- updated+at -->
-          <div class="show-label">Atualizado em</div>
-          <div class="show-data">{{ $user->updated_at }}</div>
+        <div class="group grid-size-3"> <!-- updated+at -->
+          <div class="label">Atualizado em</div>
+          <div class="field border-top-primary">{{ $user->updated_at }}</div>
         </div>
       </div>
 
       @if ($user->obs)
-      <div class="show-row"> <!-- obs -->
-        <div class="show-group grid-size-">
-          <div class="show-label">Observações</div>
-          <div class="show-data">{{ $user->obs}}</div>
+      <div class="row"> <!-- obs -->
+        <div class="group grid-size-10">
+          <div class="label">Observações</div>
+          <div class="field border-top-primary">{{ $user->obs}}</div>
         </div>
       </div>   
       @endif
