@@ -1,8 +1,10 @@
 <nav class="nav-app">
   <div class="nav-container">
     <div class="nav-header">
-      <?php echo e(session('current_user')->name); ?>
+      <a href="/landing">
+        <?php echo e(session('current_user')->name); ?>
 
+      </a>
       <div class="nav-horizontal-divider"></div>
     </div>
     <div class="nav-item">

@@ -11,17 +11,19 @@
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  color: var(--text-medium);
   padding: 50px 10px 40px 10px;
-
+  
   margin-bottom: 10px;
   background-color: var(--primary-light);
-
+  
   z-index: 100;
   position: sticky;
   top: 0px;
+}
 
-  transition: 0.3s;
+.nav-header > a {
+  text-decoration: none;
+  color: var(--text-medium);
 }
 
 .nav-item {
@@ -50,7 +52,7 @@
   font-size: 1.2rem;
   font-weight: 400;
   color: var(--text-light);
-  transition: 0.3s;
+  transition: 0.3s letter-spacing;
 }
 
 .last-nav-item {

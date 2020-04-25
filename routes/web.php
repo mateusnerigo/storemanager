@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'LoginController@index')->name('login');
 Route::get('/login', 'LoginController@index');
 Route::post('/login', 'LoginController@validateLogin');
-
+Route::get('/landing', function() {
+  return view('landing');
+});
 
 /* USERS */
 // Show all users

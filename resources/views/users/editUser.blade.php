@@ -68,7 +68,6 @@
       </div>
 
       <div class="input-row"> <!-- username, password -->
-
         <div class="input-group grid-size-3"> <!-- is_admin input -->
           <label for="is_admin" class="form-label">Tipo de Acesso</label>
           <select 

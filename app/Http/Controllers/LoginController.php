@@ -35,7 +35,7 @@ class LoginController extends Controller
                 if($request->password === $user->password) {
                     session(['current_user' => $user]);
 
-                    return view('layouts.app');
+                    return redirect('/landing');
                 } 
             }    
         }
