@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="shortcut icon" href="{{ asset('img/store_manager_ico.png') }}" type="image/png">
+
     <title>Store Manager - v0.01</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">

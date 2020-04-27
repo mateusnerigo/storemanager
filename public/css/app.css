@@ -42,7 +42,7 @@ body.app {
 .page-title-container {
   display: flex;
   width: 95%;
-  height: 85px;
+  height: 90px;
   margin: auto;
   padding: 10px;
   
@@ -51,17 +51,14 @@ body.app {
   position: sticky;
   top: 20px;
 
-  background-color: var(--primary-dark);
+  background-image: linear-gradient(
+    var(--primary-dark), 
+    var(--primary-dark), 
+    var(--primary-light) 
+  );
+
   border-radius: 5px;
-
   box-shadow: 0px 0px 5px 1px rgba(0,0,0, 0.3);
-
-  transition: 1s background-color;
-}
-
-.page-title-container:hover {
-  background-color: var(--primary-dark);
-  filter: brightness(115%);
 }
 
 .page-title-container .page-text .page-title span {
@@ -121,6 +118,7 @@ body.app {
   font-size: 0.9rem;
   font-weight: 300;
   margin-top: 20px;
+  white-space: nowrap;
 }
 
 .field {
@@ -131,6 +129,7 @@ body.app {
   text-align: center;
 }
 
+/* MEDIA QUERIES */
 @media only screen and (max-width: 1070px) {
   .page { width: 97%; }
   .group { padding: 0px 5px; }
@@ -209,8 +208,34 @@ body.app {
 .text-center { text-align: center; }
 .no-resize { resize: none; }
 
+.normal-link {
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--text-dark);
+  padding: 15px;
+}
+
+.normal-link:hover { color: var(--primary-light); }
+
+.hover-area {
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--text-light);
+  transition: 0.2s ease-out;
+}
+.hover-area:hover {
+  background-color: var(--text-light);
+  filter: brightness(96%);
+}
+
 .border-top-primary { border-top: 1px solid var(--primary-light); }
 .border-bottom-primary { border-bottom: 1px solid var(--primary-light); }
+
+.bgc-primary { background-color: var(--primary-light)}
+.bgc-primary-dark { background-color: var(--primary-dark)}
+.bgc-red { background-color: var(--red)}
+.bgc-dark-red { background-color: var(--dark-red)}
 
 .grid-size-1 { grid-column: span 1; }
 .grid-size-2 { grid-column: span 2; }
@@ -222,3 +247,16 @@ body.app {
 .grid-size-8 { grid-column: span 8; }
 .grid-size-9 { grid-column: span 9; }
 .grid-size-10 { grid-column: span 10; }
+
+.action-area { margin-top: 20px; }
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+h3 {
+  padding-top: 40vh;
+  color: var(--text-dark);
+  text-align: center;
+}

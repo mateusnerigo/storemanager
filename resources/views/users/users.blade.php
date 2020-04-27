@@ -31,7 +31,7 @@
           <td>{{ ($user->is_admin) ? 'Administrador' : 'Geral' }}</td>
           <td>{{ ($user->deleted_at) ? 'Inativo' : 'Ativo' }}</td>
           <td class="table-action">
-            <a href="/users/{{$user->id}}">Visualizar</a>
+            <a class="normal-link" href="/users/{{$user->id}}">Visualizar</a>
           </td>
         </tr>
             

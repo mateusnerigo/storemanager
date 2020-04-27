@@ -26,7 +26,6 @@ class CreateSuppliers extends Migration
             $table->string('ie')->nullable();
             $table->text('obs')->nullable();
             $table->double('spent')->default(0);
-            $table->boolean('is_active')->default(true);
             $table->softDeletes();
 
             $table->timestamps();

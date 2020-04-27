@@ -14,6 +14,7 @@
   font-weight: 300;
   
   color: var(--text-light);
+  border: none;
   border-radius: 50px;
   transition: 0.5s;
   cursor: pointer;
@@ -66,3 +67,11 @@
   background-color: var(--text-medium);
   filter: brightness(110%);
 }
+
+.normal-btn { 
+  font-size: 0.9rem;
+  border-radius: 5px;
+  color: var(--text-light); 
+  transition: 0.2s letter-spacing;
+}
+.normal-btn:hover { letter-spacing: 1px; }

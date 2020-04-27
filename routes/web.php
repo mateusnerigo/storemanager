@@ -30,3 +30,25 @@ Route::get('/users/edit/{id}','UserController@edit');
 
 // Delete an user
 Route::get('/users/delete/{id}','UserController@destroy');
+
+/* CATEGORIES */
+// Show all categories
+Route::get('/categories','CategoryController@index');
+
+// Add a new category
+Route::get('/categories/new', 'CategoryController@create');
+
+// Store the new category
+Route::post('/categories','CategoryController@store');
+
+// Show a category
+Route::get('/categories/{id}','CategoryController@show');
+
+// Update a category
+Route::post('categories/{id}', 'CategoryController@update');
+
+// Edit a category
+Route::get('/categories/edit/{id}','CategoryController@edit');
+
+// Delete a category
+Route::get('/categories/delete/{id}','CategoryController@destroy');

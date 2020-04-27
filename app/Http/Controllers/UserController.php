@@ -8,7 +8,7 @@ use App\Uf;
 
 class UserController extends Controller
 {
-    public $msg = [
+    protected $msg = [
         'name.required' => 'Preencha este campo para continuar',
         'name.unique' => 'Este usuário já está cadastrado',
         'username.required' => 'Preencha este campo para continuar',
@@ -23,12 +23,6 @@ class UserController extends Controller
         'is_admin.required' => 'Preencha este campo para continuar',
         'obs.max' => 'Somente 150 caracteres são permitidos nesse campo'
     ];
-
-    public function verifySession() {
-        if (session('current_user') == '') {
-            redirect()->route('login');
-        } 
-    }
 
     public function index()
     {
@@ -99,8 +93,8 @@ class UserController extends Controller
         $user = User::find($id);
 
         $request->validate([
-            'name' => $request->name == $user->name ? '' : 'required',
-            'username' => $request->username == $user->username ? '' : 'required|:App\User,username|min:3',
+            'name' => $request->name == $user->name ? '' : 'required|unique',
+            'username' => $request->username == $user->username ? '' : 'required|unique:App\User,username|min:3',
             'password' => $request->password == '' ? '' : 'required',
             'confirm_password' => $request->password == '' ? '' : 'required|same:password',
             'rg' => 'max:12',

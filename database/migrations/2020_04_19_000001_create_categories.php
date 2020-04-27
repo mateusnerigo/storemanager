@@ -12,7 +12,6 @@ class CreateCategories extends Migration
             $table->id();
             $table->string('name');
             $table->text('obs')->nullable();
-            $table->boolean('is_active')->default(true);
             $table->softDeletes();
             $table->timestamps();
         });

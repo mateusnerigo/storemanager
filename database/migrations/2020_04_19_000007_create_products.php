@@ -26,7 +26,6 @@ class CreateProducts extends Migration
             $table->unsignedBigInteger('supplier_id');
             $table->foreign('supplier_id')->references('id')->on('suppliers');
 
-            $table->boolean('is_active')->default(true);
             $table->softDeletes();
             $table->timestamps();
         });

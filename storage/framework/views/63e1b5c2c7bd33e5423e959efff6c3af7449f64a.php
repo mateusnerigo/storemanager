@@ -31,7 +31,7 @@
           <td><?php echo e(($user->is_admin) ? 'Administrador' : 'Geral'); ?></td>
           <td><?php echo e(($user->deleted_at) ? 'Inativo' : 'Ativo'); ?></td>
           <td class="table-action">
-            <a href="/users/<?php echo e($user->id); ?>">Visualizar</a>
+            <a class="normal-link" href="/users/<?php echo e($user->id); ?>">Visualizar</a>
           </td>
         </tr>
             
