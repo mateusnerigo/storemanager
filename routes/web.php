@@ -52,3 +52,25 @@ Route::get('/categories/edit/{id}','CategoryController@edit');
 
 // Delete a category
 Route::get('/categories/delete/{id}','CategoryController@destroy');
+
+/* SUPPLIERS */
+// Show all suppliers
+Route::get('/suppliers','SupplierController@index');
+
+// Add a new supplier
+Route::get('/suppliers/new', 'SupplierController@create');
+
+// Store the new supplier
+Route::post('/suppliers','SupplierController@store');
+
+// Show a supplier
+Route::get('/suppliers/{id}','SupplierController@show');
+
+// Update a supplier
+Route::post('suppliers/{id}', 'SupplierController@update');
+
+// Edit a supplier
+Route::get('/suppliers/edit/{id}','SupplierController@edit');
+
+// Delete a supplier
+Route::get('/suppliers/delete/{id}','SupplierController@destroy');

@@ -46,7 +46,7 @@
       
     <div class="button-field">
       <a href="/categories" class="btn btn-neutral">Cancelar</a>
-      <button class="btn btn-primary">Salvar</button>
+      <button class="btn btn-primary">Criar</button>
     </div>
   </form>
 

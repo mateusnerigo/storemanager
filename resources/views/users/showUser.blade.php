@@ -38,13 +38,7 @@
    
   <div class="show-container">
     <div class="page">
-      <div class="row">
-  
-        <div class="group grid-size-4"> <!-- email input -->
-          <div class="label">Email</div>
-          <div class="field border-top-primary">{{ $user->email ?? '--' }}</div>
-        </div>
-  
+      <div class="row">  
         <div class="group grid-size-3"> <!-- phone1 input -->
           <div class="label">Telefone 1</div>
           <div class="field border-top-primary">{{ $user->phone1 ?? '--' }}</div>
@@ -53,6 +47,11 @@
         <div class="group grid-size-3"> <!-- phone2 input -->
           <div class="label">Telefone 2</div>
           <div class="field border-top-primary">{{ $user->phone2 ?? '--' }}</div>
+        </div>
+
+        <div class="group grid-size-4"> <!-- email input -->
+          <div class="label">Email</div>
+          <div class="field border-top-primary">{{ $user->email ?? '--' }}</div>
         </div>
       </div>      
         
