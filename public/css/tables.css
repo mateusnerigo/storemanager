@@ -94,3 +94,9 @@
     border: none;
   }
 }
+
+@media only screen and (max-width: 530px) {
+  .table-container {
+    margin: 0;
+  }
+}

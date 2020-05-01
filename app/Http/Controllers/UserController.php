@@ -33,7 +33,7 @@ class UserController extends Controller
     public function create()
     {
         $ufs = Uf::all();
-        
+
         return view('users.newUser', compact('ufs'));
     }
 

@@ -9,6 +9,7 @@ Route::get('/landing', function() {
   return view('landing');
 });
 
+
 /* USERS */
 // Show all users
 Route::get('/users','UserController@index');
@@ -30,6 +31,7 @@ Route::get('/users/edit/{id}','UserController@edit');
 
 // Delete an user
 Route::get('/users/delete/{id}','UserController@destroy');
+
 
 /* CATEGORIES */
 // Show all categories
@@ -53,6 +55,7 @@ Route::get('/categories/edit/{id}','CategoryController@edit');
 // Delete a category
 Route::get('/categories/delete/{id}','CategoryController@destroy');
 
+
 /* SUPPLIERS */
 // Show all suppliers
 Route::get('/suppliers','SupplierController@index');
@@ -74,3 +77,49 @@ Route::get('/suppliers/edit/{id}','SupplierController@edit');
 
 // Delete a supplier
 Route::get('/suppliers/delete/{id}','SupplierController@destroy');
+
+
+/* PRODUCTS */
+// Show all products
+Route::get('/products','ProductController@index');
+
+// Add a new Product
+Route::get('/products/new', 'ProductController@create');
+
+// Store the new Product
+Route::post('/products','ProductController@store');
+
+// Show a Product
+Route::get('/products/{id}','ProductController@show');
+
+// Update a Product
+Route::post('products/{id}', 'ProductController@update');
+
+// Edit a Product
+Route::get('/products/edit/{id}','ProductController@edit');
+
+// Delete a Product
+Route::get('/products/delete/{id}','ProductController@destroy');
+
+
+/* CLIENTS */
+// Show all clients
+Route::get('/clients','ClientController@index');
+
+// Add a new Client
+Route::get('/clients/new', 'ClientController@create');
+
+// Store the new Client
+Route::post('/clients','ClientController@store');
+
+// Show a Client
+Route::get('/clients/{id}','ClientController@show');
+
+// Update a Client
+Route::post('clients/{id}', 'ClientController@update');
+
+// Edit a Client
+Route::get('/clients/edit/{id}','ClientController@edit');
+
+// Delete a Client
+Route::get('/clients/delete/{id}','ClientController@destroy');

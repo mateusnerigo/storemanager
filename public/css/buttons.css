@@ -75,3 +75,14 @@
   transition: 0.2s letter-spacing;
 }
 .normal-btn:hover { letter-spacing: 1px; }
+
+@media only screen and (max-width: 530px) {
+  .btn{
+    margin-top: 50px;
+  }
+
+  .button-field {
+    position: relative;
+    flex-direction: column-reverse;
+  }
+}

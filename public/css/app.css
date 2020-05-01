@@ -41,6 +41,7 @@ body.app {
 /* PAGE TITLE */
 .page-title-container {
   display: flex;
+  align-items: center;
   width: 95%;
   height: 90px;
   margin: auto;
