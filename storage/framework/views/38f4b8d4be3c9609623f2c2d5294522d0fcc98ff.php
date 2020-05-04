@@ -87,7 +87,7 @@
 
 
   <div class="button-field">
-    <a class="btn btn-neutral" href="/products/<?php echo e($product->id); ?>">Voltar</a>
+    <a class="btn btn-neutral" href="/products">Voltar</a>
     <a class="btn btn-danger" href="/products/delete/<?php echo e($product->id); ?>">Excluir</a>
     <a class="btn btn-primary" href="/products/edit/<?php echo e($product->id); ?>">Editar</a>
   </div>
