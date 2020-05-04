@@ -28,7 +28,5 @@ INSERT INTO ufs (initials, name) VALUES ('SC', 'Santa Catarina');
 INSERT INTO ufs (initials, name) VALUES ('SP', 'São Paulo');
 INSERT INTO ufs (initials, name) VALUES ('SE', 'Sergipe');
 INSERT INTO ufs (initials, name) VALUES ('TO', 'Tocantins');
-USE storemanager;
 insert into users (name, username, password, is_admin) values ('Administrador', 'admin', 'admin', 1);
-insert into users (name, username, password, is_admin) values ('Inactive', 'inactive', 'inactive', 0);
 insert into users (name, username, password, is_admin) values ('Mateus', 'mateuslineri', 'alface', 0);

@@ -16,7 +16,7 @@
     @csrf
     <div class="row">
       <div class="group grid-size-10">
-        <label for="name" class="label">Nome</label>
+        <label for="name" class="label">Nome (Obrigatório)</label>
         <input type="text" 
         name="name" 
         id="name" 

@@ -61,7 +61,7 @@
 
     <div class="button-field">
       <a class="btn btn-primary" href="/categories/new">
-        Criar Categoria
+        Cadastrar
       </a>
     </div>
 

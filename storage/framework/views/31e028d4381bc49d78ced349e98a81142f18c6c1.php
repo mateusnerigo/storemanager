@@ -16,7 +16,7 @@
     <?php echo csrf_field(); ?>
     <div class="row">
       <div class="group grid-size-10"> <!-- name input -->
-        <label for="name" class="label">Nome</label>
+        <label for="name" class="label">Nome (Obrigatório)</label>
         <input type="text" 
           name="name" 
           id="name" 
@@ -33,7 +33,7 @@
 
     <div class="row"> <!-- vip, nickname, rg, cpf -->
       <div class="group grid-size-3"> <!-- vip input -->
-        <label for="vip" class="label">Tipo de cliente</label>
+        <label for="vip" class="label">Tipo de cliente (Obrigatório)</label>
         <select 
           name="vip" 
           id="vip" 

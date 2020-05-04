@@ -14,7 +14,7 @@ class ProductController extends Controller
         'name.required' => 'Preencha este campo para continuar',
         'name.min' => 'Este campo deve ter, pelo menos, 2 caracteres',
         'name.max' => 'Este campo deve ter, no máximo, 50 caracteres',
-        'category.required' => 'Preencha este campo para continuar',
+        'category_id.required' => 'Preencha este campo para continuar',
         'supplier.required' => 'Preencha este campo para continuar',
     ];
 
@@ -29,15 +29,14 @@ class ProductController extends Controller
         $categories = Category::all();
         $suppliers = Supplier::all();
 
-        return view('products.newProduct', compact(['categories,  suppliers']));
+        return view('products.newProduct', compact(['categories',  'suppliers']));
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|min:2|max:50',
-            'category' => 'required',
-            'supplier' => 'required',
+            'category_id' => 'required',
         ], $this->msg);
 
         Product::create([
@@ -80,8 +79,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required|min:2|max:50',
-            'category' => 'required',
-            'supplier' => 'required',
+            'category_id' => 'required',
         ], $this->msg);
 
         $product = Product::find($id);
@@ -110,6 +108,5 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect('/products');
-
     }
 }

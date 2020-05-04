@@ -21,7 +21,7 @@
         name="name" 
         id="name" 
         class="field border-bottom-primary"
-        placeholder="Insira um nome para a categoria">
+        placeholder="Insira um nome para a categoria" autofocus>
 
         <div class="invalid-msg">
           <?php if($errors->has('name')): ?>

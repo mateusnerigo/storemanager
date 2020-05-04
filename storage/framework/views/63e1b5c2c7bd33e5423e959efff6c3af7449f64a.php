@@ -42,7 +42,7 @@
   
   <div class="button-field">
     <a class="btn btn-primary" href="/users/new">
-      Novo Usuário
+      Cadastrar
     </a>
   </div>
 

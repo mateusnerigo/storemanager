@@ -16,12 +16,12 @@
     @csrf
     <div class="row">
       <div class="group grid-size-10">
-        <label for="name" class="label">Nome</label>
+        <label for="name" class="label">Nome (Obrigatório)</label>
         <input type="text" 
         name="name" 
         id="name" 
         class="field border-bottom-primary"
-        placeholder="Insira um nome para a categoria">
+        placeholder="Insira um nome para a categoria" autofocus>
 
         <div class="invalid-msg">
           @if ($errors->has('name'))

@@ -18,7 +18,7 @@
 
       <div class="row"> <!-- name, rg, cpf -->
         <div class="group grid-size-6"> <!-- name input -->
-          <label for="name" class="label">Nome</label>
+          <label for="name" class="label">Nome (Obrigatório)</label>
           <input type="text" 
             name="name" 
             id="name" 
@@ -64,7 +64,7 @@
       
       <div class="row"> <!-- is_admin, username, password -->
         <div class="group grid-size-3"> <!-- is_admin input -->
-          <label for="is_admin" class="label">Tipo de Acesso</label>
+          <label for="is_admin" class="label">Tipo de Acesso (Obrigatório)</label>
           <select 
             name="is_admin" 
             id="is_admin" 
@@ -82,7 +82,7 @@
         </div> <!-- end is_admin input -->
 
         <div class="group grid-size-3"> <!-- username input -->
-          <label for="username" class="label">Usuário</label>
+          <label for="username" class="label">Usuário (Obrigatório)</label>
           <input type="text" 
             name="username" 
             id="username" 
@@ -97,7 +97,7 @@
         </div> <!-- end username input -->
         
         <div class="group grid-size-2"> <!-- password input -->
-          <label for="password" class="label">Senha</label>
+          <label for="password" class="label">Senha (Obrigatório)</label>
           <input type="password" 
             name="password" 
             id="password" 
@@ -112,7 +112,7 @@
         </div> <!-- end password input -->
   
         <div class="group grid-size-2"> <!-- confirm_password input -->
-          <label for="confirm_password" class="label">Confirmar Senha</label>
+          <label for="confirm_password" class="label">Confirmar Senha (Obrigatório)</label>
           <input type="password" 
             name="confirm_password" 
             id="confirm_password" 
@@ -126,7 +126,6 @@
           </div>
         </div> <!-- end confirm_password input -->
       </div>
-
       
       <div class="row"> <!-- email, phone -->
         <div class="group grid-size-3"> <!-- phone1 input -->

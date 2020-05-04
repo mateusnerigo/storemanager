@@ -1,9 +1,9 @@
-@extends('layouts.app')
-@section('title', 'Cadastrar novo Produto')
-@section('content')
+
+<?php $__env->startSection('title', 'Cadastrar novo Produto'); ?>
+<?php $__env->startSection('content'); ?>
   <div class="page-title-container">
     <div class="page-icon">
-      <img src="{{ asset('img/products.png') }}" alt="-">
+      <img src="<?php echo e(asset('img/products.png')); ?>" alt="-">
     </div>
 
     <div class="page-text">
@@ -15,7 +15,7 @@
   </div>
 
   <form action="/products" class="page" method="POST">
-    @csrf
+    <?php echo csrf_field(); ?>
 
     <div class="row"> <!-- name, stock, category -->
       <div class="group grid-size-6"> <!-- name -->
@@ -27,9 +27,10 @@
           placeholder="Nome do produto">
 
         <div class="invalid-msg">
-        @if ($errors->has('name'))
-          {{ $errors->first('name') }}
-        @endif
+        <?php if($errors->has('name')): ?>
+          <?php echo e($errors->first('name')); ?>
+
+        <?php endif; ?>
         </div>
       </div> <!-- end name -->
 
@@ -48,15 +49,16 @@
           id="category_id" 
           class="field border-bottom-primary">
           <option value="" default selected>Selecione uma categoria</option>
-          @foreach ($categories as $category)
-          <option value="{{ $category->id }}">{{ $category->name }}</option>
-          @endforeach
+          <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+          <option value="<?php echo e($category->id); ?>"><?php echo e($category->name); ?></option>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </select>
         
         <div class="invalid-msg">
-        @if ($errors->has('category_id'))
-          {{ $errors->first('category_id') }}
-        @endif
+        <?php if($errors->has('category_id')): ?>
+          <?php echo e($errors->first('category_id')); ?>
+
+        <?php endif; ?>
         </div>
       </div> <!-- end category -->
     </div>
@@ -77,9 +79,9 @@
           id="supplier_id" 
           class="field border-bottom-primary">
           <option value="" default selected>Selecione um fornecedor</option>
-          @foreach ($suppliers as $supplier)
-          <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
-          @endforeach
+          <?php $__currentLoopData = $suppliers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $supplier): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+          <option value="<?php echo e($supplier->id); ?>"><?php echo e($supplier->name); ?></option>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </select>
       </div> <!-- end suppliers -->
 
@@ -157,4 +159,5 @@
     </div>
   </form>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\storeManager\resources\views/products/newProduct.blade.php ENDPATH**/ ?>
