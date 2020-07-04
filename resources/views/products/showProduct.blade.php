@@ -7,11 +7,12 @@
     </div>
 
     <div class="page-text">
-    <div class="page-title">
-      {{ $product->name }} 
-      {{ $product->manufacturer ? '(' . $product->manufacturer . ')' : '' }}
-      - Quantidade disponível: {{ $product->stock }}
-    </div>
+      <div class="page-title">
+        {{ $product->name }} 
+        {{ $product->manufacturer ? '(' . $product->manufacturer . ')' : '' }}
+        - Quantidade disponível: {{ $product->stock }}
+      </div>
+      
       <div class="page-description">Categoria: {{$category->name}}</div>
     </div>
   </div>
@@ -48,7 +49,7 @@
           <div class="label">Preço promocional</div>
           <div class="field border-top-primary">R$ {{ $product->promo_price }}</div>
         </div>
-      </div>
+      </div> 
 
       <div class="row">  <!-- manuf, supplier, ex_code -->
         <div class="group grid-size-3"> <!-- manufacturer input -->

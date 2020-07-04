@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+#region DoneRoutes
 Route::get('/', 'LoginController@index')->name('login');
 Route::get('/login', 'LoginController@index');
 Route::post('/login', 'LoginController@validateLogin');
@@ -9,117 +10,136 @@ Route::get('/landing', function() {
   return view('landing');
 });
 
+// USERS
+Route::prefix('users')->group(function() {
+  // Show all users
+  Route::get('','UserController@index');
+  
+  // Store the new user
+  Route::post('','UserController@store');
 
-/* USERS */
-// Show all users
-Route::get('/users','UserController@index');
+  // Add a new user
+  Route::get('new', 'UserController@create');
+  
+  // Show an user
+  Route::get('{id}','UserController@show')->where('id', '[0-9]+');
+  
+  // Update an user
+  Route::post('{id}', 'UserController@update')->where('id', '[0-9]+');
+  
+  // Edit an user
+  Route::get('edit/{id}','UserController@edit')->where('id', '[0-9]+');
+  
+  // Delete an user
+  Route::get('delete/{id}','UserController@destroy')->where('id', '[0-9]+');
+});
 
-// Add a new user
-Route::get('/users/new', 'UserController@create');
+// CATEGORIES
+Route::prefix('categories')->group(function() {
+  // Show all categories
+  Route::get('','CategoryController@index');
 
-// Store the new user
-Route::post('/users','UserController@store');
+  // Store the new category
+  Route::post('','CategoryController@store');
 
-// Show an user
-Route::get('/users/{id}','UserController@show');
+  // Add a new category
+  Route::get('new', 'CategoryController@create');
+  
+  // Show a category
+  Route::get('{id}','CategoryController@show')->where('id', '[0-9]+');
+  
+  // Update a category
+  Route::post('{id}', 'CategoryController@update')->where('id', '[0-9]+');
+  
+  // Edit a category
+  Route::get('edit/{id}','CategoryController@edit')->where('id', '[0-9]+');
+  
+  // Delete a category
+  Route::get('delete/{id}','CategoryController@destroy')->where('id', '[0-9]+');
+});
 
-// Update an user
-Route::post('users/{id}', 'UserController@update');
+// SUPPLIERS 
+Route::prefix('suppliers')->group(function() {
+  // Show all suppliers
+  Route::get('','SupplierController@index');
+  
+  // Store the new supplier
+  Route::post('','SupplierController@store');
 
-// Edit an user
-Route::get('/users/edit/{id}','UserController@edit');
+  // Add a new supplier
+  Route::get('new', 'SupplierController@create');
+  
+  // Show a supplier
+  Route::get('{id}','SupplierController@show')->where('id', '[0-9]+');
+  
+  // Update a supplier
+  Route::post('{id}', 'SupplierController@update')->where('id', '[0-9]+');
+  
+  // Edit a supplier
+  Route::get('edit/{id}','SupplierController@edit')->where('id', '[0-9]+');
+  
+  // Delete a supplier
+  Route::get('delete/{id}','SupplierController@destroy')->where('id', '[0-9]+');
+});
 
-// Delete an user
-Route::get('/users/delete/{id}','UserController@destroy');
+// PRODUCTS 
+Route::prefix('products')->group(function() {
+  // Show all products
+  Route::get('','ProductController@index');
+  
+  // Store the new Product
+  Route::post('','ProductController@store');
+  
+  // Add a new Product
+  Route::get('new', 'ProductController@create');
+  
+  // Show a Product
+  Route::get('{id}','ProductController@show')->where('id', '[0-9]+');
+  
+  // Update a Product
+  Route::post('{id}', 'ProductController@update')->where('id', '[0-9]+');
+  
+  // Edit a Product
+  Route::get('edit/{id}','ProductController@edit')->where('id', '[0-9]+');
+  
+  // Delete a Product
+  Route::get('delete/{id}','ProductController@destroy')->where('id', '[0-9]+');
+});
 
+// CLIENTS 
+Route::prefix('clients')->group(function() {
+  // Show all clients
+  Route::get('','ClientController@index');
+  
+  // Store the new Client
+  Route::post('','ClientController@store');
+  
+  // Add a new Client
+  Route::get('new', 'ClientController@create');
+  
+  // Show a Client
+  Route::get('{id}','ClientController@show')->where('id', '[0-9]+');
+  
+  // Update a Client
+  Route::post('{id}', 'ClientController@update')->where('id', '[0-9]+');
+  
+  // Edit a Client
+  Route::get('edit/{id}','ClientController@edit')->where('id', '[0-9]+');
+  
+  // Delete a Client
+  Route::get('delete/{id}','ClientController@destroy')->where('id', '[0-9]+');
+});
+#endregion DoneRoutes
 
-/* CATEGORIES */
-// Show all categories
-Route::get('/categories','CategoryController@index');
+/* CASH MOVIMENT */
+Route::prefix('cash_movement')->group(function() {
+  // "index"
+  Route::get('', 'CashMovementController@index');
 
-// Add a new category
-Route::get('/categories/new', 'CategoryController@create');
+  // buying route
+  Route::get('buy', 'CashMovementController@buy');
 
-// Store the new category
-Route::post('/categories','CategoryController@store');
+  // selling route
+  Route::get('sell', 'CashMovementController@sell');
+});
 
-// Show a category
-Route::get('/categories/{id}','CategoryController@show');
-
-// Update a category
-Route::post('categories/{id}', 'CategoryController@update');
-
-// Edit a category
-Route::get('/categories/edit/{id}','CategoryController@edit');
-
-// Delete a category
-Route::get('/categories/delete/{id}','CategoryController@destroy');
-
-
-/* SUPPLIERS */
-// Show all suppliers
-Route::get('/suppliers','SupplierController@index');
-
-// Add a new supplier
-Route::get('/suppliers/new', 'SupplierController@create');
-
-// Store the new supplier
-Route::post('/suppliers','SupplierController@store');
-
-// Show a supplier
-Route::get('/suppliers/{id}','SupplierController@show');
-
-// Update a supplier
-Route::post('suppliers/{id}', 'SupplierController@update');
-
-// Edit a supplier
-Route::get('/suppliers/edit/{id}','SupplierController@edit');
-
-// Delete a supplier
-Route::get('/suppliers/delete/{id}','SupplierController@destroy');
-
-
-/* PRODUCTS */
-// Show all products
-Route::get('/products','ProductController@index');
-
-// Add a new Product
-Route::get('/products/new', 'ProductController@create');
-
-// Store the new Product
-Route::post('/products','ProductController@store');
-
-// Show a Product
-Route::get('/products/{id}','ProductController@show');
-
-// Update a Product
-Route::post('products/{id}', 'ProductController@update');
-
-// Edit a Product
-Route::get('/products/edit/{id}','ProductController@edit');
-
-// Delete a Product
-Route::get('/products/delete/{id}','ProductController@destroy');
-
-
-/* CLIENTS */
-// Show all clients
-Route::get('/clients','ClientController@index');
-
-// Add a new Client
-Route::get('/clients/new', 'ClientController@create');
-
-// Store the new Client
-Route::post('/clients','ClientController@store');
-
-// Show a Client
-Route::get('/clients/{id}','ClientController@show');
-
-// Update a Client
-Route::post('clients/{id}', 'ClientController@update');
-
-// Edit a Client
-Route::get('/clients/edit/{id}','ClientController@edit');
-
-// Delete a Client
-Route::get('/clients/delete/{id}','ClientController@destroy');

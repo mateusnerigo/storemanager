@@ -47,19 +47,11 @@
       </a>
     </div>
     <div class="nav-item">
-      <a href="/addresses" class="nav-link">
-        <span class="nav-text">
-          Endereços
-        </span>
-        <img src={{ asset('img/adress.png') }} class="nav-icon">
-      </a>
-    </div>
-    <div class="nav-item">
-      <a href="/sales" class="nav-link">
+      <a href="/cash_movement" class="nav-link">
         <span class="nav-text">
           Caixa
         </span>
-        <img src={{ asset('img/sales.png') }} class="nav-icon">
+        <img src={{ asset('img/cash_movement.png') }} class="nav-icon">
       </a>
     </div>
     <div class="nav-item">

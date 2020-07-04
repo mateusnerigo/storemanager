@@ -20,6 +20,11 @@
   outline: none;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 body {  
   height: 100vh;
   width: 100vw;
@@ -250,11 +255,6 @@ body.app {
 .grid-size-10 { grid-column: span 10; }
 
 .action-area { margin-top: 20px; }
-
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
 
 h3 {
   padding-top: 40vh;

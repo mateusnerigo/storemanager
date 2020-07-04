@@ -50,7 +50,7 @@
           <div class="label">Preço promocional</div>
           <div class="field border-top-primary">R$ <?php echo e($product->promo_price); ?></div>
         </div>
-      </div>
+      </div> 
 
       <div class="row">  <!-- manuf, supplier, ex_code -->
         <div class="group grid-size-3"> <!-- manufacturer input -->
@@ -84,12 +84,11 @@
       </div>   
     </div>
 
-
-
-  <div class="button-field">
-    <a class="btn btn-neutral" href="/products">Voltar</a>
-    <a class="btn btn-danger" href="/products/delete/<?php echo e($product->id); ?>">Excluir</a>
-    <a class="btn btn-primary" href="/products/edit/<?php echo e($product->id); ?>">Editar</a>
+    <div class="button-field">
+      <a class="btn btn-neutral" href="/products">Voltar</a>
+      <a class="btn btn-danger" href="/products/delete/<?php echo e($product->id); ?>">Excluir</a>
+      <a class="btn btn-primary" href="/products/edit/<?php echo e($product->id); ?>">Editar</a>
+    </div>
   </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\storeManager\resources\views/products/showProduct.blade.php ENDPATH**/ ?>
